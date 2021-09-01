@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+  header {
+    height: 150px;
+    background-color: #144e83;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  button {
+  background-color: #144e83;
+  border: #144e83;
+  }
+  
+  ::placeholder {
+    text-align: center;
+  }
+  
+  .recherche {
+    height: 30px;
+    width: 350px;
+    margin-left: 10vh;
+    border-radius: 20px;
+  }
+  
+  .search {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .photo {
+    width: 180px;
+    height: 150px;
+  }
+  
+  .panier {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .inscription {
+    height: 80px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .lien {
+    margin: 20px;
+  }
+  
+  .lien2 {
+    color: white;
+  }
+  
+  header nav div a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  header nav div p {
+    color: white;
+    width: 150px;
+    border: 2px solid #b8b8b8;
+    border-radius: 20px;
+    text-align: center;
+    margin: 2px auto;
+  }
+  
+  .nav2 {
+    margin-top: 20px;
+    height: 60px;
+    background-color: #b8b8b8;
+  }
+  
+  .active {
+    color: #144e83;
+    font-weight: 900;
+    font-size: 30px;
+  }
+  
+  .contain {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  section {
+    /* height: 700px; */
+    padding-bottom: 0%;  
+}
+
+
+
+.container {
+  box-sizing: border-box;
+  background-color:white;
+  padding-top: 7%;
+  margin: auto;
+  margin-top: 100px;
+  width: 50%;
+  /* max-width: 1500px; */
+}
+
+label {
+
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
+  
+}
+
+
+
+h1 {
+  height: 50px;
+  color: #ffc800;
+  width: 100%;
+  text-align: center;
+  
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* alignement interieur des input / au maxwidth container */
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  
+}
+
+
+::placeholder {
+  text-align: left;
+}
+
+  .footer {
+    background-color: #144e83;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    margin-top: 10px;
+  }
+  
+  .liens {
+    text-decoration: none;
+    color: white;
+  }
+  
