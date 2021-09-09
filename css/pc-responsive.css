@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo {
+margin-top: 80px;
+  height: 90px;
+  width: 90px;
+}
+
+.recherche {
+  width: 200px;
+  margin-top: 250px;
+  margin-left: 500px;
+
+}
+
+.nav2 {
+  width: 100%;
+}
+
+section {
+  height: 6000px;
+}
+
+.footer {
+  background-color: #144e83;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80px;
+  margin-top: 10px;
+}
+
+.menu-icon {
+  display: block;
+  cursor: pointer;
+}
