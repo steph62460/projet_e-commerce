@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BSPC- Page d'accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" media="(max-width:500px)" href="css/media-cury acceuil.css">
+    <title>BSPC-informatique</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,8 +20,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style2.css">
+   
 </head>
 
 <body>
@@ -30,15 +32,12 @@
         </div>
         <div>
             <span>
-                <a href="index.html"><img src="img/logo.jpg" alt="logo BSPC" class="photo"></a>
+                <img src="img/logo.jpg" alt="logo BSPC" class="photo">
             </span>
         </div>
         <div class="inscription">
             <div class="lien">
-                <p>✆ 03 21 00 00 00</p>
-            </div>
-            <div class="lien">
-                <a href="inscription.html" class="lien2">INSCRIPTION</a>
+                <a href="projet_e_commerce 06082021/html/inscription.html" class="lien2">INSCRIPTION</a>
             </div>
             <div class="lien">
             <a href="#"><img class="panier" src="img/panier.png" alt="panier"></a>
@@ -46,15 +45,15 @@
         </div>
     </nav>
     <nav class="nav2">
-        <div class="contain">
-            <a href="pc.html">PC</a></li>
-            <a href="tel-tabl.html">TELEPHONIE-TABLETTE</a></li>
-            <a href="img-son.html">IMAGES ET SON</a></li>
-            <a href="accessoires.html">ACCESSOIRES</a></li>
-        </div>
+        <ul class="contain">
+            <li><a href="pc.html">PC</a></li>
+            <li><a href="tel-tabl.html">TELEPHONIE-TABLETTE</a></li>
+            <li><a href="img-son.html">IMAGES ET SON</a></li>
+            <li><a href="accessoires.html">ACCESSOIRES</a></li>
+        </ul>
     </nav>
 </header>
-<section>
+<section class="sect">
     <div id="carouselExemple" class="carousel slide" data-ride="carousel" data-interval="3000">
         <ol class="carousel-indicators">
             <li data-target="#carouselExemple" data-slide-to="0" class="active"></li>
