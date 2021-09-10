@@ -13,7 +13,7 @@
         <nav>
             <div>
                 <input class="recherche" type="search" name="" id="" placeholder="recherche...">
-                <button type="submit""><a href=""><img class="search" src="img/logo-search.png" alt="logo recherche"></a></button>
+                <button type="submit"><a href=""><img class="search" src="img/logo-search.png" alt="logo recherche"></a></button>
             </div>
             <div>
                 <span>
@@ -22,26 +22,20 @@
             </div>
             <div class="inscription">
                 <div class="lien">
-                    <p>✆ 03 21 00 00 00</p>
-                </div>
-                <div class="lien">
                     <a href="inscription.html" class="lien2">INSCRIPTION</a>
                 </div>
                 <div class="lien">
                 <a href="#"><img class="panier" src="img/panier.png" alt="panier"></a>
                 </div>
-                <div class="lien">
-                    <img src="img/menu.png" alt="" class="menu-icon" onclick="menubar()">
-                    </div>
             </div>
         </nav>
         <nav class="nav2">
-            <div class="contain">
-                <a href="pc.html" class="active">PC</a></li>
-                <a href="tel-tabl.html">TELEPHONIE-TABLETTE</a></li>
-                <a href="img-son.html">IMAGES ET SON</a></li>
-                <a href="accessoires.html">ACCESSOIRES</a></li>
-            </div>
+            <ul class="contain">
+                <li><a href="pc.html" class="active">PC</a></li>
+                <li><a href="tel-tabl.html">TELEPHONIE-TABLETTE</a></li>
+                <li><a href="img-son.html">IMAGES ET SON</a></li>
+                <li><a href="accessoires.html">ACCESSOIRES</a></li>
+            </ul>
         </nav>
     </header>
     <section>
@@ -141,7 +135,24 @@
             <div><a href="#" class="liens">LIVRAISON</a></div>
             <div><a href="#" class="liens">SAV</a></div>
             <div><a href="#" class="liens">RESEAUX SOCIAUX</a></div>
+            <div><a href="#" class="liens">NOUS TROUVER</a></div>
         </div>
     </footer>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+    
+        MenuItems.style.maxHeight = "0px";
+    
+        function menubar(){
+            if(MenuItems.style.maxHeight =="0px") 
+                {
+                    MenuItems.style.maxHeight = "200px";
+                }
+    
+                else {
+                    MenuItems.style.maxHeight = "0px";
+                }
+        }
+    </script>
 </body>
 </html>
