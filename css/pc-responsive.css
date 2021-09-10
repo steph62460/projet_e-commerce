@@ -9,12 +9,14 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .photo {
   height: 90px;
   width: 90px;
   margin-top: 100px;
+  margin-left: 32px;
 }
 
 .inscription {
@@ -55,4 +57,8 @@ section {
   align-items: center;
   height: 100%;
   margin-top: 10px;
+}
+
+.bouton {
+  margin-bottom: 50px;
 }
