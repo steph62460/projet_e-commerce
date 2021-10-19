@@ -5,6 +5,7 @@ section {
 
 #carouselExemple {
   width: 65%;
+  border-radius: 1px solid black;
   margin: 0 auto;
   padding: 10px;
   margin-top: 100px;
@@ -27,9 +28,29 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.titre:after {
+  content: "";
+  background: #144e83;
+  width: 180px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .rayon {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.rayon2 {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -73,5 +94,3 @@ section {
   justify-content: center;
   margin-top: 150px;
 }
-
-
