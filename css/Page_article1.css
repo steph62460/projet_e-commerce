@@ -11,7 +11,7 @@ header {
 
 header nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -26,8 +26,7 @@ border: #144e83;
 
 .recherche {
   height: 30px;
-  width: 350px;
-  margin-left: 10vh;
+  width: 250px;
   border-radius: 20px;
 }
 
@@ -39,7 +38,6 @@ border: #144e83;
 .photo {
   width: 180px;
   height: 150px;
-
 }
 
 .panier {
@@ -49,32 +47,23 @@ border: #144e83;
 
 .inscription {
   height: 80px;
-  margin-right: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
 .lien {
-  margin: 20px;
+  margin: 30px;
 }
 
 .lien2 {
   color: white;
 }
 
+
 header nav div a {
   color: black;
   text-decoration: none;
-}
-
-header nav div p {
-  color: white;
-  width: 150px;
-  border: 2px solid #b8b8b8;
-  border-radius: 20px;
-  text-align: center;
-  margin: 2px auto;
 }
 
 .nav2 {
@@ -83,17 +72,26 @@ header nav div p {
   background-color: #b8b8b8;
 }
 
-.active {
-  color: #144e83;
-  font-weight: 900;
-  font-size: 30px;
-}
-
-.contain {
+.nav2 ul {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.nav2 ul li {
+  list-style-type: none;
+}
+
+.nav2 ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+ .nav2 ul li .active {
+  color: #144e83;
+  font-weight: 900;
+  font-size: 30px;
 }
 
 
