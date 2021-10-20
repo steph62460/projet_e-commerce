@@ -119,6 +119,67 @@ h2:after {
     transform: translateX(-50%);
   }
 
+.articles-container {
+    margin-bottom: 5em;
+}   
+
+  .articles-container .article {
+    margin: 10px 20px;
+    width: 350px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+  .articles-container .article img {
+    margin-top: 20px;
+    width: 250px;
+    height: 200px;
+    margin-left: 20px;
+}
+
+  .articles-container .article h4 {
+    text-align: center;
+    color: #144e83;
+    font-size: 20px;
+
+}
+
+  .articles-container .article>p {
+    text-align: center;
+    font-weight: 700;
+}
+
+  .articles-container .article .article-action {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px 0;
+}
+
+  .articles-container .article .article-action p {
+    font-size: 20px;
+    font-weight: 900;
+    color: #c0392b;
+}
+
+  .articles-container .article .article-action button {
+    border: 0;
+    border-radius: 3px;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    background-color: #144e83;
+    color: white;
+}
+
+  .articles-container .article .article-action button:hover {
+    background-color: #b8b8b8;
+    color: #144e83;
+}
+
   .rayon, .rayon2, .rayon3 {
       display: flex;
       justify-content: space-between;
@@ -130,37 +191,19 @@ h2:after {
     height: 200px;
   }
 
-  .article {
-      min-width: 150px;
-      flex-basis: 20%;
-      margin-left: 20px;
-  }
-
-  h4 {
-    color: #144e83;
-    font-size: 20px;
-  }
   
-  .col-4 p {
-    font-size: 14px;
-  }
-
   .prix {
     color: red;
     font-size: 24px;
   }
 
-  .promo {
-    margin-left: 65px;
-  }
 
   .haut-page {
     display: flex;
     justify-content: center;
-    margin-top: 80px;
   }
 
-  .bouton {
+  .boutons {
     display: inline-block;
     padding: 15px 25px;
     border-radius: 30px;

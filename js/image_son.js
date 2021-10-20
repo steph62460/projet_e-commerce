@@ -39,6 +39,36 @@ const articles= [
     "price": 349.96,
     "img": "./img/IMG TV/hisense 43 4k.jpg"
 },
+{
+    "id": 5,
+    "denomination": "PHILIPS 32 - TV Full HD - 80cm",
+    "marque": "PHILIPS",
+    "resolution": "Full HD",
+    "taille": 32,
+    "dispo": "EN STOCK",
+    "price": 299.95,
+    "img": "./img/IMG TV/PHILIPS 32 - TV Full HD - 80cm.jpg"
+},
+{
+    "id": 6,
+    "denomination": "LG 55nano - TV 4K 139cm",
+    "marque": "LG",
+    "resolution": "4K",
+    "taille": 55,
+    "dispo": "EN STOCK",
+    "price": 849.95,
+    "img": "./img/IMG TV/lg 55nano 4k.jpg"
+},
+{
+    "id": 7,
+    "denomination": "TCL 55 - TV 4K 139cm",
+    "marque": "TCL",
+    "resolution": "4K",
+    "taille": 55,
+    "dispo": "EN STOCK",
+    "price": 649.90,
+    "img": "./img/IMG TV/tcl 55 4k.jpg"
+}
 ]
 
 
