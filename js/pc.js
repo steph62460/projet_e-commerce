@@ -12,7 +12,7 @@ const articles = [
         id: 2,
         denomination: "Dell OptiPlex 3010 SFF",
         description: "Intel Core i5 3.20 GHz 8 Go DDR3 240 Go SSD DVD Writer HDMI Windows 10 Pro 64 bit (reconditionné)",
-        price: 'PRIX: <del>199.<sup>50</sup>',
+        price: 'PRIX: 189.<sup>00</sup>€',
         promo : '189.<sup>00</sup>€',
         img: 'img/pc-fixe-dell.jpg',
         lien: '#'
@@ -37,39 +37,50 @@ const articles = [
     }
 ]
 
-const art = document.querySelector('.rayon');
-
 const displayArticle = () => {
-    const articlesNode = articles.map((art) => {
-        return createArticleElement(art);
+    const articlesNode = articles.map((article) => {
+        return createArticle(article)
     });
-    art.append(...articlesNode);
-}
-
-const createArticleElement = (art) => {
-
-    const div2 = document.createElement('div');
-    div2.classList.add('article');
-    const a = document.createElement('a');
-    a.href = art.lien;
-    const img = document.createElement('img');
-    img.classList.add('pc')
-    img.src = art.img;
-    const title = document.createElement('h4');
-    title.innerText = art.denomination;
-    const paragr = document.createElement('p');
-    paragr.innerText = art.description;
-    const paragr2 = document.createElement('p');
-    paragr2.classList.add('prix');
-    paragr2.innerHTML = art.price;
-    const paragr3 = document.createElement('p');
-    paragr3.classList.add('prix');
-    paragr3.classList.add('promo');
-    paragr3.innerHTML = art.promo;
+    app.append(...articlesNode)
+    }
     
-    a.appendChild(img);
-    div2.append(a , title, paragr, paragr2, paragr3);
-    return div2;
+
+    
+    const app = document.querySelector('.rayon');
+
+    
+    const createArticle = (article) => {
+   
+    
+    const divArticle = document.createElement('div');
+    const a = document.createElement('a');
+    const image = document.createElement('img');
+    const h2 = document.createElement('h4');
+    const paragraph = document.createElement('p');
+    const divAction = document.createElement('div');
+    const price = document.createElement('p');
+    const btn = document.createElement('button');
+    
+  
+    divArticle.classList.add('article');
+    a.href = article.lien;
+    image.src = article.img;
+    image.alt = "tv lg";
+    divAction.classList.add('article-action');
+    
+    
+
+    h2.innerText = article.denomination;
+    paragraph.innerText = article.description;
+    price.innerHTML = article.price;
+    btn.innerText = "Ajouter au panier";
+    
+
+    a.appendChild(image);
+    divArticle.append(a, h2, paragraph, divAction);
+    divAction.append(price, btn);
+    
+    return divArticle;
     }
     
     displayArticle();
@@ -97,7 +108,7 @@ const articles2 = [
         id: 7,
         denomination: "HP 17-by2024nf PC Portable 17.3\" HD+ Noir",
         description: 'Intel Core i3, RAM 4 Go, HDD 1 To, AZERTY, Windows 10',
-        price: 'PRIX: <del>549.<sup>00</sup></del>€',
+        price: 'PRIX: 490.<sup>87</sup>€',
         promo : "490.<sup>87</sup>€",
         img: 'img/pc-portable-hp.jpg',
         lien: '#'
@@ -113,39 +124,50 @@ const articles2 = [
     }
 ]
 
-const art2 = document.querySelector('.rayon2');
-
 const displayArticle2 = () => {
-    const articlesNode2 = articles2.map((art2) => {
-        return createArticleElement2(art2);
+    const articlesNode2 = articles2.map((article) => {
+        return createArticle2(article)
     });
-    art2.append(...articlesNode2);
-}
-
-const createArticleElement2 = (art2) => {
-
-    const div2 = document.createElement('div');
-    div2.classList.add('article');
-    const a = document.createElement('a');
-    a.href = art2.lien;
-    const img = document.createElement('img');
-    img.classList.add('pc')
-    img.src = art2.img;
-    const title = document.createElement('h4');
-    title.innerText = art2.denomination;
-    const paragr = document.createElement('p');
-    paragr.innerText = art2.description;
-    const paragr2 = document.createElement('p');
-    paragr2.classList.add('prix');
-    paragr2.innerHTML = art2.price;
-    const paragr3 = document.createElement('p');
-    paragr3.classList.add('prix');
-    paragr3.classList.add('promo');
-    paragr3.innerHTML = art2.promo;
+    app2.append(...articlesNode2)
+    }
     
-    a.appendChild(img);
-    div2.append(a , title, paragr, paragr2, paragr3);
-    return div2;
+
+    
+    const app2 = document.querySelector('.rayon2');
+
+    
+    const createArticle2 = (article) => {
+   
+    
+    const divArticle = document.createElement('div');
+    const a = document.createElement('a');
+    const image = document.createElement('img');
+    const h2 = document.createElement('h4');
+    const paragraph = document.createElement('p');
+    const divAction = document.createElement('div');
+    const price = document.createElement('p');
+    const btn = document.createElement('button');
+    
+  
+    divArticle.classList.add('article');
+    a.href = article.lien;
+    image.src = article.img;
+    image.alt = "tv lg";
+    divAction.classList.add('article-action');
+    
+    
+
+    h2.innerText = article.denomination;
+    paragraph.innerText = article.description;
+    price.innerHTML = article.price;
+    btn.innerText = "Ajouter au panier";
+    
+
+    a.appendChild(image);
+    divArticle.append(a, h2, paragraph, divAction);
+    divAction.append(price, btn);
+    
+    return divArticle;
     }
     
     displayArticle2();
@@ -189,39 +211,50 @@ const articles3 = [
     }
 ]
 
-const art3 = document.querySelector('.rayon3');
-
 const displayArticle3 = () => {
-    const articlesNode3 = articles3.map((art3) => {
-        return createArticleElement3(art3);
+    const articlesNode3 = articles3.map((article) => {
+        return createArticle3(article)
     });
-    art3.append(...articlesNode3);
-}
-
-const createArticleElement3 = (art3) => {
-
-    const div2 = document.createElement('div');
-    div2.classList.add('article');
-    const a = document.createElement('a');
-    a.href = art3.lien;
-    const img = document.createElement('img');
-    img.classList.add('pc');
-    img.src = art3.img;
-    const title = document.createElement('h4');
-    title.innerText = art3.denomination;
-    const paragr = document.createElement('p');
-    paragr.innerText = art3.description;
-    const paragr2 = document.createElement('p');
-    paragr2.classList.add('prix');
-    paragr2.innerHTML = art3.price;
-    const paragr3 = document.createElement('p');
-    paragr3.classList.add('prix');
-    paragr3.classList.add('promo');
-    paragr3.innerHTML = art3.promo;
+    app3.append(...articlesNode3)
+    }
     
-    a.appendChild(img);
-    div2.append(a , title, paragr, paragr2, paragr3);
-    return div2;
+
+    
+    const app3 = document.querySelector('.rayon3');
+
+    
+    const createArticle3 = (article) => {
+   
+    
+    const divArticle = document.createElement('div');
+    const a = document.createElement('a')
+    const image = document.createElement('img');
+    const h2 = document.createElement('h4');
+    const paragraph = document.createElement('p');
+    const divAction = document.createElement('div');
+    const price = document.createElement('p');
+    const btn = document.createElement('button');
+    
+  
+    divArticle.classList.add('article');
+    a.href = a.lien;
+    image.src = article.img;
+    image.alt = "tv lg";
+    divAction.classList.add('article-action');
+    
+    
+
+    h2.innerText = article.denomination;
+    paragraph.innerText = article.description;
+    price.innerHTML = article.price;
+    btn.innerText = "Ajouter au panier";
+    
+
+    a.appendChild(image);
+    divArticle.append(a, h2, paragraph, divAction);
+    divAction.append(price, btn);
+    
+    return divArticle;
     }
     
     displayArticle3();
