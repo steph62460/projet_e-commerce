@@ -44,6 +44,8 @@
     width: 40px;
     height: 40px;
   }
+
+
   
   .inscription {
     height: 80px;
@@ -136,8 +138,8 @@ h2:after {
     margin-top: 20px;
     width: 250px;
     height: 200px;
-    margin-left: 20px;
-}
+    margin-left: 40px;
+  }
 
   .articles-container .article h4 {
     text-align: center;
@@ -173,6 +175,10 @@ h2:after {
     transition: box-shadow 0.2s;
     background-color: #144e83;
     color: white;
+}
+
+.button {
+  display: none;
 }
 
   .articles-container .article .article-action button:hover {
