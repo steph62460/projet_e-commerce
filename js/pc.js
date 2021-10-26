@@ -4,6 +4,7 @@ const articles = [
         denomination: "Lenovo ThinkCentre V530s-07ICR SFF (11BM002QFR)",
         description : "Intel Pentium Gold G5400 4 Go 1 To Graveur DVD Windows 10 Professionnel 64 bits",
         price: 439.96,
+        prixAffiche: "Prix: 439.<sup>96</sup>€",
         img: 'img/pc-fixe-lenovo.jpg',
         lien: 'Page_article1.html'
     },
@@ -12,6 +13,7 @@ const articles = [
         denomination: "Dell OptiPlex 3010 SFF",
         description: "Intel Core i5 3.20 GHz 8 Go DDR3 240 Go SSD DVD Writer HDMI Windows 10 Pro 64 bit (reconditionné)",
         price: 189.00,
+        prixAffiche: "Prix: 189.<sup>00</sup>€",
         img: 'img/pc-fixe-dell.jpg',
         lien: '#'
     },
@@ -20,6 +22,7 @@ const articles = [
         denomination: "HP Pavilion TP01-2014ng",
         description: '11e génération de processeurs Intel® Core™ i5 i5-11400 16 GB DDR4-SDRAM 512 GB SSD Mini Tower PC Windows 10 Home',
         price: 695.65,
+        prixAffiche: "Prix: 695.<sup>65</sup>€",
         img: 'img/pc-fixe-hp.jpg',
         lien: '#'
     },
@@ -28,6 +31,7 @@ const articles = [
         denomination: "Acer PC Tour Veriton M4630G",
         description: 'Intel i3-4130 RAM 8Go Disque Dur 1To Windows 10 WiFi (Reconditionné)',
         price: 274.90,
+        prixAffiche: "Prix: 274.<sup>90</sup>€",
         img: 'img/pc-fixe-acer.jpg',
         lien: '#'
     }
@@ -66,7 +70,7 @@ const displayArticle = () => {
     
     h2.innerText = article.denomination;
     paragraph.innerText = article.description;
-    price.innerText = article.price;
+    price.innerHTML = article.prixAffiche;
     btnAjout.innerText = "Ajouter au panier";
     
     // modif bouton
@@ -78,6 +82,7 @@ const displayArticle = () => {
         btnSupp.classList.remove('button');
         btnAjout.classList.add('button');
         addArticleCart(article);
+        priceCart();
     });
 
     btnSupp.addEventListener('click', () =>{
@@ -86,6 +91,7 @@ const displayArticle = () => {
         btnSupp.classList.add('button');
         btnAjout.classList.remove('button');
         removeArticleCart(article);
+        priceCart();
     });
 
 
@@ -102,14 +108,19 @@ const displayArticle = () => {
 const addArticleCart = (article) => {
     panier.push(article);
     console.log(panier);
-    priceCart();
+    span.classList.add('span')
+    span.innerText =panier.length;
 }
     // fonction suppression article au panier
 const removeArticleCart = (article) => {
     let deleteArticle = panier.filter(value => value.id !== article.id);
     panier = deleteArticle;
     console.log(panier);
-    priceCart();
+    if (panier.length !==0) {
+        span.classList.add('span')
+    span.innerText =panier.length;
+    }
+
 };
 
 // calcul du panier
@@ -123,7 +134,16 @@ const total2 = parseFloat(total.toFixed(2));
 console.log(total2);
 };
 
-    displayArticle();
+const numberPanier = document.querySelector(".lien")
+const span = document.createElement('span');
+const lien = document.createElement('a');
+const panier2 = document.createElement('img');
+panier2.classList.add('panier')
+panier2.src = "./img/panier.png"
+numberPanier.append(lien, span);
+lien.appendChild(panier2);
+
+displayArticle();
 
 const articles2 = [
     {
@@ -131,6 +151,7 @@ const articles2 = [
         denomination: "Acer Aspire 3 A317-53-34A6 Ordinateur Portable 17.3'' HD+",
         description: 'Intel Core i3-1115G4, RAM 8 Go, SSD 512 Go, Intel UHD Graphics, Windows 10',
         price: 629.00,
+        prixAffiche: "Prix: 629.<sup>00</sup>€",
         promo: "",
         img: 'img/pc-portable-acer.jpg',
         lien: '#'
@@ -140,6 +161,7 @@ const articles2 = [
         denomination: "Asus Chromebook C523NA-BR000 Ordinateur Portable 15.6\" HD",
         description: 'Celeron, RAM 4 Go, eMMC 64 Go, Chrome OS',
         price: 299.00,
+        prixAffiche: "Prix: 299.<sup>00</sup>€",
         promo: "",
         img: 'img/pc-portable-asus.jpg',
         lien: '#'
@@ -149,6 +171,7 @@ const articles2 = [
         denomination: "HP 17-by2024nf PC Portable 17.3\" HD+ Noir",
         description: 'Intel Core i3, RAM 4 Go, HDD 1 To, AZERTY, Windows 10',
         price: 490.87,
+        prixAffiche: "Prix: 490.<sup>87</sup>€",
         promo : "",
         img: 'img/pc-portable-hp.jpg',
         lien: '#'
@@ -158,6 +181,7 @@ const articles2 = [
         denomination: "Apple MacBook Pro MD101LL/A Ordinateur portable 13,3in",
         description: '2,5GHz, 4 Go de RAM, 500 Go de HD (Reconditionne)',
         price: 549.00,
+        prixAffiche: "Prix: 549.<sup>00</sup>€",
         promo: "",
         img: 'img/pc-portable-apple.jpg',
         lien: '#'
@@ -194,17 +218,18 @@ const displayArticle2 = () => {
     
     h2.innerText = article.denomination;
     paragraph.innerText = article.description;
-    price.innerHTML = article.price;
+    price.innerHTML = article.prixAffiche;
     btnAjout.innerText = "Ajouter au panier";
 
     btnSupp.style.backgroundColor = 'red';
     btnSupp.innerText = "Supprimer du panier";
     btnSupp.classList.add('button');
-    
+
     btnAjout.addEventListener('click', () => {
         btnSupp.classList.remove('button');
         btnAjout.classList.add('button');
         addArticleCart2(article);
+        priceCart();
     });
 
     btnSupp.addEventListener('click', () =>{
@@ -213,6 +238,7 @@ const displayArticle2 = () => {
         btnSupp.classList.add('button');
         btnAjout.classList.remove('button');
         removeArticleCart2(article);
+        priceCart();
     });
 
     a.appendChild(image);
@@ -225,14 +251,19 @@ const displayArticle2 = () => {
     const addArticleCart2 = (article) => {
         panier.push(article);
         console.log(panier);
-        priceCart();
+        span.classList.add('span')
+        span.innerText =panier.length;
+        
     }
         // fonction suppression article au panier
     const removeArticleCart2 = (article) => {
         let deleteArticle = panier.filter(value => value.id !== article.id);
         panier = deleteArticle;
         console.log(panier);
-        priceCart();
+        if (panier.length !==0) {
+            span.classList.add('span')
+        span.innerText =panier.length;
+        }
     };
     
     // calcul du panier
@@ -253,6 +284,7 @@ const articles3 = [
         denomination: "Acer Predator Orion 5000 (PO5-615s DG.E1YEF.007)",
         description: 'Intel Core i7-10700K 16 Go SSD 1 To NVIDIA GeForce RTX 3080 11 Go Graveur DVD Wi-Fi AC Windows 10 Famille 64 bits',
         price: 3299.90,
+        prixAffiche: "Prix: 3299.<sup>00</sup>€",
         promo: "",
         img: 'img/pc-gameur-acer.jpg',
         lien: '#'
@@ -262,6 +294,7 @@ const articles3 = [
         denomination: "LDLC PC10 Zen Perfect",
         description: 'AMD Ryzen 5 5600X (3.7 GHz / 4.6 GHz) 16 Go SSD 240 Go + HDD 2 To NVIDIA GeForce RTX 3060 12 Go LAN 2.5 GbE Windows 10 Famille 64 bits',
         price: 1759.94,
+        prixAffiche: "Prix: 1759.<sup>94</sup>€",
         promo: "",
         img: 'img/pc-gameur-ldlc.jpg',
         lien: '#'
@@ -271,6 +304,7 @@ const articles3 = [
         denomination: "ASUS ROG STRIX G15 G512LI-HN101T",
         description: 'Intel Core i5-10300H 16 Go SSD 512 Go 15.6" LED Full HD 144 Hz NVIDIA GeForce GTX 1650 Ti 4 Go Wi-Fi AX/Bluetooth Windows 10 Famille 64 bits',
         price: 999.95,
+        prixAffiche: "Prix: 999.<sup>95</sup>€",
         promo: "",
         img: 'img/pc-gameur-asus.jpg',
         lien: '#'
@@ -280,6 +314,7 @@ const articles3 = [
         denomination: "Gigabyte Aero 15 OLED XD-73FR644SP",
         description: 'Intel Core i7-11800H 32 Go SSD 1 To 15.6" OLED Ultra HD NVIDIA GeForce RTX 3070 8 Go Wi-Fi AX/Bluetooth Webcam Windows 10 Professionnel 64 bits',
         price: 2699.95,
+        prixAffiche: "Prix: 2699.<sup>95</sup>€",
         promo: "",
         img: 'img/pc-gameur-gigabyte.jpg',
         lien: '#'
@@ -323,7 +358,7 @@ const displayArticle3 = () => {
 
     h2.innerText = article.denomination;
     paragraph.innerText = article.description;
-    price.innerHTML = article.price;
+    price.innerHTML = article.prixAffiche;
     btnAjout.innerText = "Ajouter au panier";
     
     btnSupp.style.backgroundColor = 'red';
@@ -333,6 +368,7 @@ const displayArticle3 = () => {
         btnSupp.classList.remove('button');
         btnAjout.classList.add('button');
         addArticleCart3(article);
+        priceCart();
     });
 
     btnSupp.addEventListener('click', () =>{
@@ -341,6 +377,7 @@ const displayArticle3 = () => {
         btnSupp.classList.add('button');
         btnAjout.classList.remove('button');
         removeArticleCart3(article);
+        priceCart();
     });
 
     a.appendChild(image);
@@ -354,14 +391,18 @@ const displayArticle3 = () => {
     const addArticleCart3 = (article) => {
         panier.push(article);
         console.log(panier);
-        priceCart();
+        span.classList.add('span')
+        span.innerText =panier.length;
     }
         // fonction suppression article au panier
     const removeArticleCart3 = (article) => {
         let deleteArticle = panier.filter(value => value.id !== article.id);
         panier = deleteArticle;
         console.log(panier);
-        priceCart();
+        if (panier.length !==0) {
+            span.classList.add('span')
+        span.innerText =panier.length;
+        }
     };
     
     // calcul du panier

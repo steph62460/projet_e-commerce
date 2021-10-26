@@ -45,8 +45,6 @@
     height: 40px;
   }
 
-
-  
   .inscription {
     height: 80px;
     display: flex;
@@ -178,6 +176,18 @@ h2:after {
 }
 
 .button {
+  display: none;
+}
+
+.span {
+  border: 1px solid red;
+  background-color: red;
+  border-radius: 5px;
+  width: 10px;
+  height: 10px;
+}
+
+.display {
   display: none;
 }
 
