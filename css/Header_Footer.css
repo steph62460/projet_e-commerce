@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ---------------Header---------------- */
+  
+  header {
+    height: 150px;
+    background-color: #144e83;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  button {
+  background-color: #144e83;
+  border: #144e83;
+  }
+  
+  ::placeholder {
+    text-align: center;
+  }
+  
+  .recherche {
+    height: 30px;
+    width: 250px;
+    border-radius: 20px;
+  }
+  
+  .search {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .photo {
+    width: 180px;
+    height: 150px;
+  }
+  
+  .panier {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .inscription {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .lien {
+    margin: 30px;
+  }
+  
+  .lien2 {
+    color: white;
+  }
+  
+  
+  header nav div a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .nav2 {
+    margin-top: 20px;
+    height: 60px;
+    background-color: #b8b8b8;
+  }
+  
+  .nav2 ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .nav2 ul li {
+    list-style-type: none;
+  }
+  
+  .nav2 ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  
+   .nav2 ul li .active {
+    color: #144e83;
+    font-weight: 900;
+    font-size: 30px;
+  }
+
+
+  /* ----------------Header resp --------------------- */
+/* 
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  nav {
+    width: 100%;
+  }
+  
+  .photo {
+    height: 90px;
+    width: 90px;
+    margin-top: 100px;
+    margin-left: 100px;
+  }
+  
+  .inscription {
+    margin-right: 100px;
+    margin-top: 100px;
+  }
+  
+  .recherche {
+    display: none;
+  }
+  
+  button {
+    display: none;
+  }
+  
+  .nav2 {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+  }
+  
+  .nav2 ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
+
+
+  /* ---------------Footer---------------- */
+  .footer {
+    background-color: #144e83;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    margin-top: 10px;
+  }
+  
+  .liens {
+    text-decoration: none;
+    color: white;
+  } 
+  
+  .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .col-4 {
+    flex-basis: 10%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+    margin-right: 20px;
+  }
+  
+  .col-4 img {
+    width: 100%;
+  }
+  
+  .title {
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color:black;
+    font-size: 40px;
+  }
+  
+  .title:after {
+    content: '';
+    background: #144e83;
+    width: 150px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  h4 {
+    color: #144e83;
+    font-size: 20px;
+  }
+  
+  .col-4 p {
+    font-size: 14px;
+  }
+  
+  .menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+  }
+
+
+/* ----------------Footer resp ------------------ */
+/* .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    margin-top: 10px;
+  }
+  
+  .bouton {
+    margin-bottom: 50px;
+<<<<<<< HEAD
+  } */
+=======
+  } */
+>>>>>>> 5582457a5f15cb8bc6b20b92ff326529ee823a4d
