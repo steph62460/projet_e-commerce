@@ -6,6 +6,7 @@ const articles = [
     description:
       "Intel core I3-1115G4 et Intel UHD graphics RAM 8 Go SSD 512 Go",
     price: 629.0,
+    prixAffiche: "PRIX: 629.<sup>00</sup>€",
     img: "img/pc-portable-acer.jpg",
   },
   {
@@ -14,7 +15,7 @@ const articles = [
     marque: "Asus",
     description: 'Intel HD Graphics 500 11.6" Celeron RAM 4 Go, EMMC 32 Go',
     price: 309.99,
-    promo: "209.99 euro",
+    prixAffiche: "PRIX: 309.<sup>99</sup>€",
     img: "img/ordinateur-portable-chromebook-asus-c223na-gj0010.jpg",
   },
   {
@@ -23,7 +24,7 @@ const articles = [
     marque: "Apple",
     description: 'Intel core I5 16 Go" RAM 8Go,stockage 256Go 2020',
     price: 1999.0,
-    promo: "1 758.93 euro",
+    prixAffiche: "PRIX: 1999.<sup>00</sup>€",
     img: "img/apple-27-imac-retina-5k-2020-intel-core-i5.jpg",
   },
   {
@@ -33,7 +34,7 @@ const articles = [
     description:
       'RAM 8Go- stockage 512Go15.6" FHD 144Hz-core I5-10300H SSD-GTX 1650 Max Q ',
     price: 899.0,
-    promo: "818.99 euro",
+    prixAffiche: "PRIX:899.<sup>00</sup>€",
     img: "img/pc-portable-gamer-msi-gf63-thin-10sc-079xfr-15.jpg",
   },
 ];
@@ -41,8 +42,7 @@ const articles = [
 let panier = [];
 
 const app = document.querySelector(".rayon");
-const span = document.querySelector(".spanny");
-const divart =document.querySelector(".div");
+const divAction = document.querySelector(".div");
 
 const displayArticle = () => {
   const articleNode = articles.map((app) => {
@@ -53,29 +53,28 @@ const displayArticle = () => {
 
 const createArticle = (app) => {
   const div = document.createElement("div");
+  const h2 = document.createElement("h2");
   const a = document.createElement("a");
   const img = document.createElement("img");
-  const h2 = document.createElement("h2");
   const p = document.createElement("p");
-  
+
   div.classList.add("article");
+  h2.classList.add("reference");
+  h2.innerText = app.denomination;
   a.href = "#";
   img.classList.add("pc");
   img.src = app.img;
   img.alt = app.marque;
-  h2.classList.add("reference");
-  h2.innerText = app.denomination;
   p.innerText = app.description;
 
-  // button js
-  const divArt = document.createElement("button");
+  const divAction = document.createElement("div");
   const p2 = document.createElement("p");
-  divArt.classList.add("article-action");
-  p2.classList.add("prix");
-  p2.innerText = app.price;
-  
   const btnAjout = document.createElement("button");
   const btnSupp = document.createElement("button");
+
+  divAction.classList.add("article-action");
+  p2.classList.add("prix");
+  p2.innerHTML = app.prixAffiche;
 
   btnAjout.innerText = "Ajouter au panier";
   btnAjout.classList.add("button");
@@ -87,16 +86,18 @@ const createArticle = (app) => {
     btnAjout.classList.add("dnone");
     btnSupp.classList.remove("dnone");
     addArticleToCart(app);
+    priceCart();
   });
 
   btnSupp.addEventListener("click", () => {
     btnSupp.classList.add("dnone");
     btnAjout.classList.remove("dnone");
     removeArticleToCart(app);
+    priceCart();
   });
 
-  divArt.append( btnAjout, btnSupp);
-  div.append(a, h2, p, p2, divArt);
+  div.append(a, img, h2, p, p2, divAction);
+  divAction.append(p2, btnAjout, btnSupp);
   a.appendChild(img);
 
   return div;
@@ -106,14 +107,22 @@ const createArticle = (app) => {
 const addArticleToCart = (app) => {
   panier.push(app);
   console.log(panier);
-  priceCart();
+  span.classList.add("span");
+  span.innerText = panier.length;
+  
 };
 
 const removeArticleToCart = (app) => {
   let deleteArticle = panier.filter((value) => value.id !== app.id);
   panier = deleteArticle;
-  console.log(panier);
-  priceCart();
+  if (panier.length !== 0) {
+    span.classList.add("span");
+    span.innerText = panier.length; 
+  }else{ 
+      span.innerText = " "; 
+      span.classList.remove('span');
+  }
+//   console.log(panier);
 };
 
 const priceCart = () => {
@@ -121,10 +130,29 @@ const priceCart = () => {
     acc += value.price;
     return acc;
   }, 0);
-  console.log(total);
+  const total2 = parseFloat(total.toFixed(2));
+  console.log(total2);
 };
 
+const numberPanier = document.querySelector(".lien");
+const span = document.createElement("span");
+const lien = document.createElement("a");
+const panier2 = document.createElement("img");
+panier2.classList.add("panier");
+panier2.src = "./img/panier.png";
+
+numberPanier.append(lien, span);
+lien.appendChild(panier2);
+
 displayArticle();
+
+
+
+
+
+
+
+
 
 
 
@@ -153,6 +181,7 @@ const article2 = [
     description:
       "Intel Core i7-10700K 16 Go SSD 1 To NVIDIA GeForce RTX 3080 11 Go Graveur DVD Wi-Fi AC Windows 10 Famille 64 bits",
     price: 3299.95,
+    prixAffiche: "PRIX: 3299.<sup>95</sup>€",
     img: "img/pc-gameur-acer.jpg",
   },
   {
@@ -162,6 +191,7 @@ const article2 = [
     description:
       "AMD Ryzen 5 5600X (3.7 GHz / 4.6 GHz) 16 Go SSD 240 Go + HDD 2 To NVIDIA GeForce RTX 3060 12 Go LAN 2.5 GbE Windows 10 Famille 64 bits",
     price: 1759.94,
+    prixAffiche: "PRIX: 1759.<sup>94</sup>€",
     img: "img/pc-gameur-ldlc.jpg",
   },
   {
@@ -171,6 +201,7 @@ const article2 = [
     description:
       'Intel Core i5-10300H 16 Go SSD 512 Go 15.6" LED Full HD 144 Hz NVIDIA GeForce GTX 1650 Ti 4 Go Wi-Fi AX/Bluetooth Windows 10 Famille 64 bits',
     price: 999.95,
+    prixAffiche: "PRIX: 999.<sup>95</sup>€",
     img: "img/pc-gameur-asus.jpg",
   },
   {
@@ -180,11 +211,11 @@ const article2 = [
     description:
       'Intel Core i7-11800H 32 Go SSD 1 To 15.6" OLED Ultra HD NVIDIA GeForce RTX 3070 8 Go Wi-Fi AX/Bluetooth Webcam Windows 10 Professionnel 64 bits',
     price: 2699.95,
+    prixAffiche: "PRIX: 2699.<sup>95</sup>€",
     img: "img/pc-gameur-gigabyte.jpg",
   },
 ];
 const app2 = document.querySelector(".rayon2");
-const span2 = document.querySelector(".spanny");
 
 const displayArticle2 = () => {
   const articleNode2 = article2.map((art) => {
@@ -199,7 +230,7 @@ const createArticle2 = (art) => {
   const img = document.createElement("img");
   const h2 = document.createElement("h4");
   const p = document.createElement("p");
- 
+
   div.classList.add("article");
   img.classList.add("pc");
   img.src = art.img;
@@ -214,8 +245,8 @@ const createArticle2 = (art) => {
   const p2 = document.createElement("p");
   divArt2.classList.add("article-action");
   p2.classList.add("prix");
-  p2.innerText = art.price;
-  
+  p2.innerHTML = art.prixAffiche;
+
   const btnAjout = document.createElement("button");
   btnAjout.innerText = "Ajouter au panier";
   btnAjout.classList.add("button");
@@ -238,23 +269,32 @@ const createArticle2 = (art) => {
   });
 
   divArt2.append(p2, btnAjout, btnSupp);
-  div.append(a, h2, p,  divArt2);
+  div.append(a, h2, p, divArt2);
   a.appendChild(img);
 
   return div;
 };
 
-
 // panier js
 const addArticleToCart2 = (art) => {
   panier.push(art);
   console.log(panier);
+  span.classList.add("span");
+  span.innerText = panier.length;
+ 
 };
 
 const removeArticleToCart2 = (art) => {
-  let deleteArticle = panier.filter((value) => value.id !== art.id);
+  let deleteArticle = panier.filter(value => value.id !== art.id);
   panier = deleteArticle;
-  console.log(panier);
+ 
+  if (panier.length !== 0) {
+    span.classList.add("span");
+    span.innerText = panier.length; 
+  }else{ 
+      span.innerText = " "; 
+      span.classList.remove('span');
+  }
 };
 
 const priceCart2 = () => {
@@ -262,7 +302,8 @@ const priceCart2 = () => {
     acc += value.price;
     return acc;
   }, 0);
-  console.log(total);
+  const total2 = parseFloat(total.toFixed(2));
+  console.log(total2);
 };
 
 displayArticle2();
