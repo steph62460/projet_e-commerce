@@ -161,7 +161,7 @@ lien.appendChild(panier2);
 
 displayArticle();
 
-const pcPortable = []
+let pcPortable = []
 
 
 
@@ -270,7 +270,7 @@ const displayArticle2 = () => {
     
     displayArticle2();
 
-const pcGameur = []
+let pcGameur = []
 
 const displayArticle3 = () => {
     const users3 = fetch('https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/pcGameur.json')
@@ -393,6 +393,7 @@ const displayArticle3 = () => {
     apiKey: "AIzaSyAM3I5CDdy3-xLrPd_dRBb1kqztc4RdVdA",
     authDomain: "projet-ecommerce-grp2.firebaseapp.com",
     projectId: "projet-ecommerce-grp2",
+    // databaseURL: "https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/",
     storageBucket: "projet-ecommerce-grp2.appspot.com",
     messagingSenderId: "134275146361",
     appId: "1:134275146361:web:7061a84c95240bb203eaa8"
