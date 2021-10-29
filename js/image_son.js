@@ -81,8 +81,9 @@ const displayArticle = () => {
     app.append(...articlesNode)
     }
     
-    const app = document.querySelector('.ecran_pc');
 
+    
+    const app = document.querySelector('.articles-container');
 
     
     const createArticle = (article) => {
@@ -116,101 +117,7 @@ const displayArticle = () => {
     
     return divArticle;
     }
-
     
     
 
     displayArticle();
-
-    const articles2= [
-    {
-        "id": 5,
-        "denomination": "Casque gamer Roccat ELO 7.1 AIR",
-        "marque": "ROCCAT",
-        "son": "Surround 7.1",
-        "connexion":"sans fils",
-        "dispo": "EN STOCK",
-        "price": 92.99,
-        "img": "./img/img_casques/Casque gamer Roccat ELO 7.1 AIR.png"
-    },
-    {
-        "id": 6,
-        "denomination": "Casque gamer Razer Barracuda X",
-        "marque": "RAZER",
-        "son": "Surround 7.1",
-        "connexion":"sans fils",
-        "dispo": "EN STOCK",
-        "price": 99.99,
-        "img": "./img/img_casques/Casque gamer Razer Barracuda X.png"
-    },
-    {
-        "id": 7,
-        "denomination": "Casque gamer Hyperx Cloud Stinger S 7.1 PC",
-        "marque": "HYPERX",
-        "son": "Surround 7.1",
-        "connexion":"Filaire Jack",
-        "dispo": "EN STOCK",
-        "price": 69.99,
-        "img": "./img/img_casques/Casque gamer Hyperx Cloud Stinger S 7.1 PC.png"
-    },
-    {
-        "id": 8,
-        "denomination": "Casque gamer JBL Quantum 200 Noir",
-        "marque": "JBL",
-        "son": "Surround 7.1",
-        "connexion":"Filaire Jack",
-        "dispo": "EN STOCK",
-        "price": 59.99,
-        "img": "./img/img_casques/Casque gamer JBL Quantum 200 Noir.png"
-    }]
-
-    const displayArticle2 = () => {
-        const articles2Node = articles2.map((article) => {
-            return createArticle2(article)
-        });
-        app2.append(...articles2Node)
-        }
-        
-    
-        
-        const app2 = document.querySelector('.casques');
-    
-    
-        
-        const createArticle2 = (article) => {
-       
-        
-        const divArticle = document.createElement('div');
-        const image = document.createElement('img');
-        const h2 = document.createElement('h');
-        const paragraph = document.createElement('p');
-        const divAction = document.createElement('div');
-        const price = document.createElement('p');
-        const btn = document.createElement('button');
-        
-      
-        divArticle.classList.add('article');
-        image.src = article.img;
-        image.alt = "tv lg";
-        divAction.classList.add('article-action');
-        
-        
-    
-        h2.innerText = article.denomination;
-        paragraph.innerText = article.dispo;
-        price.innerText = article.price;
-        btn.innerText = "Ajouter au panier";
-        
-    
-        
-        divArticle.append(image, h2, paragraph, divAction);
-        divAction.append(price, btn);
-        
-        return divArticle;
-        }
-    
-     
-        
-        
-    
-        displayArticle2();
