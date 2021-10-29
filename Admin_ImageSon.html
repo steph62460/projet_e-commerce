@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+<body>
+    <div class="pge_admin_imgson">
+        <h2>Page Admin Image & Son</h2>
+    
+
+    <label for="idB">ID</label><input type="text" id="idB"><br>
+    <label for="marqueB">Marque</label><input type="text" id="marqueB"><br>
+    <label for="denominationB">Denomination</label><input type="text" id="denominationB"><br>
+    <label for="priceB">Prix</label><input type="text" id="priceB"><br>
+    <label for="dispoB">Dispo</label>
+        <select name="" id="dispoB">
+            <option value="dispo">Dispo</option>
+            <option value="nondispo">Non dispo</option>
+        </select>
+        <br>
+    <label for="imageB">Image</label><input type="file" id="imageB"><img src="img/IMG TV/" alt=""><br>
+    
+    <button id="insert">INSERT</button>
+    <button id="select">SELECT</button>
+    <!-- <button id="selectAll">SELECT ALL</button> -->
+    <button id="update">UPDATE</button>
+    <button id="delete">DELETE</button>
+
+</div>
+
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAM3I5CDdy3-xLrPd_dRBb1kqztc4RdVdA",
+      authDomain: "projet-ecommerce-grp2.firebaseapp.com",
+      databaseURL: "https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/",
+      projectId: "projet-ecommerce-grp2",
+      storageBucket: "projet-ecommerce-grp2.appspot.com",
+      messagingSenderId: "134275146361",
+      appId: "1:134275146361:web:7061a84c95240bb203eaa8"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    
+
+        import { getDatabase,get,ref,set,child, update, remove}
+        from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
+
+
+        const db = getDatabase();
+
+
+        let idb = document.querySelector('#idB');
+        let marqueb = document.querySelector('#marqueB');
+        let denominationb = document.querySelector('#denominationB');
+        let priceb = document.querySelector('#priceB');
+        let dispob = document.querySelector('#dispoB');
+        let imageb = document.querySelector('#imageB');
+
+        let insertBtn = document.querySelector('#insert');
+        let selectBtn = document.querySelector('#select');
+        // let selectAllBtn = document.querySelector('#selectAll');
+        let updateBtn = document.querySelector('#update');
+        let deleteBtn = document.querySelector('#delete');
+
+
+        function insertData() {
+            set(ref(db, "user/" + idb.value), {
+                marque: marqueb.value,
+                denomination: denominationb.value,
+                price: priceb.value,
+                dispo: dispob.value,
+                image: imageb.value,
+            })
+                .then(() => {
+                alert('data inserted')
+            })
+
+            .catch((error) => {
+                alert('Error: ' + error)
+            })
+
+        }
+
+            insertBtn.addEventListener('click', insertData)
+        
+
+        function selectData() {
+            const dbref = ref(db);
+
+            get(child(dbref, "user/" + idb.value))
+                .then((snapshot) =>{
+                    if (snapshot.exists()) {
+                        marqueb.value = snapshot.val().marque;
+                        denominationb.value = snapshot.val().denomination;
+                        priceb.value = snapshot.val().price;
+                        dispob.value = snapshot.val().dispo;
+                        imageb.value = snapshot.val().image;
+                } else {
+                    alert('No product found !!!')
+                }
+            })
+            .catch ((error) => {
+                alert('Error : ' + error)
+            })
+        }
+
+
+        selectBtn.addEventListener('click', selectData)
+
+
+        function updateData() {
+            update (ref(db, "user/" + idb.value), {
+                marque: marqueb.value,
+                denomination: denominationb.value,
+                price: priceb.value,
+                dispo: dispob.value,
+                image: imageb.value,
+            })
+
+            .then (() => {
+                alert('data updated')
+            })
+            .catch ((error) => {alert('error : ' + error)
+        })
+        }
+
+        updateBtn.addEventListener('click', updateData)
+
+
+        function deleteData(){
+            remove(ref(db,"user/" + idb.value))
+                .then(() => {
+                    alert('data deleted')
+                })
+                .catch((error) => {
+                    alert('Error : ' + error)
+                })
+        }
+
+        deleteBtn.addEventListener('click', deleteData)
+
+
+
+
+
+      </script>
+
+
+
+
+
+
+</body>
+</html>
