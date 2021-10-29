@@ -1,6 +1,6 @@
 // ------------------------------------------ECRANS---------------------------------------------
 
-// const articles= [
+let ecrans= [
 // {
 //     "id": 1,
 //     "denomination": "LG 55 - TV OLED 4K - 139cm",
@@ -41,18 +41,31 @@
 //     "price": 349.96,
 //     "img": "./img/IMG TV/hisense 43 4k.jpg"
 // }
-// ]
+]
 
 let panier = [];
 
 
 const displayArticle = () => {
-    const articlesNode = articles.map((article) => {
+    const users = fetch ('https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/ecrans.json')
+    .then(async response => {
+        try {
+            const ecrans = await response.json();
+            console.log(ecrans);
+    
+    const ecransNode = ecrans.map((article) => {
         return createArticle(article)
     });
-    app.append(...articlesNode)
+    app.append(...ecransNode)
+
+    } catch (e) {
+        console.log(e);
+    }
+    })
+
     }
     
+    const app = document.querySelector('.ecran_pc');
 
     const span = document.querySelector('.spanny');
     
@@ -146,7 +159,7 @@ const displayArticle = () => {
 
 
 
-    // const articles2= [
+    let casque= [
     // {
     //     "id": 5,
     //     "denomination": "Casque gamer Roccat ELO 7.1 AIR",
@@ -186,18 +199,31 @@ const displayArticle = () => {
     //     "dispo": "EN STOCK",
     //     "price": 59.99,
     //     "img": "./img/img_casques/Casque gamer JBL Quantum 200 Noir.png"
-    // }]
+    // }
+]
 
 
 
 
     const displayArticle2 = () => {
-        const articles2Node = articles2.map((article) => {
-            return createArticle2(article)
-        });
-        app2.append(...articles2Node)
-        }
-        
+        const users = fetch ('https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/casque.json')
+        .then(async response => {
+            try {
+                const casque = await response.json();
+                console.log(casque);
+                const casque2Node = casque.map((article) => {
+                    return createArticle2(article)
+                });
+                app2.append(...casque2Node)
+               
+
+            } catch (e) {
+                console.log(e);
+            }
+        })
+
+     
+    }
     
         
         const app2 = document.querySelector('.casques');
@@ -289,3 +315,31 @@ const displayArticle = () => {
         
     
         displayArticle2();
+
+
+        // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAM3I5CDdy3-xLrPd_dRBb1kqztc4RdVdA",
+      authDomain: "projet-ecommerce-grp2.firebaseapp.com",
+      databaseURL: "https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/",
+      projectId: "projet-ecommerce-grp2",
+      storageBucket: "projet-ecommerce-grp2.appspot.com",
+      messagingSenderId: "134275146361",
+      appId: "1:134275146361:web:7061a84c95240bb203eaa8"
+    };
+  
+    // Initialize Firebase
+    const app3 = initializeApp(firebaseConfig);
+    
+
+        import { getDatabase,get,ref,set,child, update, remove}
+        from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
+
+
+        const db = getDatabase();
+
