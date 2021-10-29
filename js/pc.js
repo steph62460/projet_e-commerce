@@ -1,51 +1,61 @@
-const articles = [
-    {
-        id: 1,
-        denomination: "Lenovo ThinkCentre V530s-07ICR SFF (11BM002QFR)",
-        description : "Intel Pentium Gold G5400 4 Go 1 To Graveur DVD Windows 10 Professionnel 64 bits",
-        price: 439.96,
-        prixAffiche: "Prix: 439.<sup>96</sup>€",
-        img: 'img/pc-fixe-lenovo.jpg',
-        lien: 'Page_article1.html'
-    },
-    {
-        id: 2,
-        denomination: "Dell OptiPlex 3010 SFF",
-        description: "Intel Core i5 3.20 GHz 8 Go DDR3 240 Go SSD DVD Writer HDMI Windows 10 Pro 64 bit (reconditionné)",
-        price: 189.00,
-        prixAffiche: "Prix: 189.<sup>00</sup>€",
-        img: 'img/pc-fixe-dell.jpg',
-        lien: '#'
-    },
-    {
-        id: 3,
-        denomination: "HP Pavilion TP01-2014ng",
-        description: '11e génération de processeurs Intel® Core™ i5 i5-11400 16 GB DDR4-SDRAM 512 GB SSD Mini Tower PC Windows 10 Home',
-        price: 695.65,
-        prixAffiche: "Prix: 695.<sup>65</sup>€",
-        img: 'img/pc-fixe-hp.jpg',
-        lien: '#'
-    },
-    {
-        id: 4,
-        denomination: "Acer PC Tour Veriton M4630G",
-        description: 'Intel i3-4130 RAM 8Go Disque Dur 1To Windows 10 WiFi (Reconditionné)',
-        price: 274.90,
-        prixAffiche: "Prix: 274.<sup>90</sup>€",
-        img: 'img/pc-fixe-acer.jpg',
-        lien: '#'
-    }
+let pcFixe = [
+    // {
+    //     id: 1,
+    //     denomination: "Lenovo ThinkCentre V530s-07ICR SFF (11BM002QFR)",
+    //     description : "Intel Pentium Gold G5400 4 Go 1 To Graveur DVD Windows 10 Professionnel 64 bits",
+    //     price: 439.96,
+    //     prixAffiche: "Prix: 439.<sup>96</sup>€",
+    //     img: 'img/pc-fixe-lenovo.jpg',
+    //     lien: 'Page_article1.html'
+    // },
+    // {
+    //     id: 2,
+    //     denomination: "Dell OptiPlex 3010 SFF",
+    //     description: "Intel Core i5 3.20 GHz 8 Go DDR3 240 Go SSD DVD Writer HDMI Windows 10 Pro 64 bit (reconditionné)",
+    //     price: 189.00,
+    //     prixAffiche: "Prix: 189.<sup>00</sup>€",
+    //     img: 'img/pc-fixe-dell.jpg',
+    //     lien: '#'
+    // },
+    // {
+    //     id: 3,
+    //     denomination: "HP Pavilion TP01-2014ng",
+    //     description: '11e génération de processeurs Intel® Core™ i5 i5-11400 16 GB DDR4-SDRAM 512 GB SSD Mini Tower PC Windows 10 Home',
+    //     price: 695.65,
+    //     prixAffiche: "Prix: 695.<sup>65</sup>€",
+    //     img: 'img/pc-fixe-hp.jpg',
+    //     lien: '#'
+    // },
+    // {
+    //     id: 4,
+    //     denomination: "Acer PC Tour Veriton M4630G",
+    //     description: 'Intel i3-4130 RAM 8Go Disque Dur 1To Windows 10 WiFi (Reconditionné)',
+    //     price: 274.90,
+    //     prixAffiche: "Prix: 274.<sup>90</sup>€",
+    //     img: 'img/pc-fixe-acer.jpg',
+    //     lien: '#'
+    // }
 ]
 
 let panier =[];
 
 
 const displayArticle = () => {
-    const articlesNode = articles.map((article) => {
-        return createArticle(article)
-    });
+    const users = fetch('https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/pcFixe.json')
+        .then(async response => {
+            try {
+                const pcFixe = await response.json();
+                console.log(pcFixe);
+                const articlesNode = pcFixe.map((article) => {
+                return createArticle(article)
+                });
     app.append(...articlesNode)
+    } catch(e) {
+    console.log(e);
     }
+        })
+
+}
     
     const app = document.querySelector('.rayon');
 
@@ -57,6 +67,7 @@ const displayArticle = () => {
     const image = document.createElement('img');
     const h2 = document.createElement('h4');
     const paragraph = document.createElement('p');
+    const paragraph2 = document.createElement('p')
     const divAction = document.createElement('div');
     const price = document.createElement('p');
     const btnAjout = document.createElement('button');
@@ -70,6 +81,8 @@ const displayArticle = () => {
     
     h2.innerText = article.denomination;
     paragraph.innerText = article.description;
+    paragraph2.classList.add('stock')
+    paragraph2.innerHTML = "Dispo: " + article.dispo;
     price.innerHTML = article.prixAffiche;
     btnAjout.innerText = "Ajouter au panier";
     
@@ -97,7 +110,7 @@ const displayArticle = () => {
 
     
     a.appendChild(image);
-    divArticle.append(a, h2, paragraph, divAction);
+    divArticle.append(a, h2, paragraph,paragraph2, divAction);
     divAction.append(price, btnAjout,btnSupp);
     
     return divArticle;
@@ -119,6 +132,9 @@ const removeArticleCart = (article) => {
     if (panier.length !==0) {
         span.classList.add('span')
     span.innerText =panier.length;
+    } else {
+        span.classList.remove('span');
+        span.innerText = "";
     }
 
 };
@@ -134,7 +150,7 @@ const total2 = parseFloat(total.toFixed(2));
 console.log(total2);
 };
 
-const numberPanier = document.querySelector(".lien")
+const numberPanier = document.querySelector(".lien3")
 const span = document.createElement('span');
 const lien = document.createElement('a');
 const panier2 = document.createElement('img');
@@ -145,55 +161,25 @@ lien.appendChild(panier2);
 
 displayArticle();
 
-const articles2 = [
-    {
-        id: 5,
-        denomination: "Acer Aspire 3 A317-53-34A6 Ordinateur Portable 17.3'' HD+",
-        description: 'Intel Core i3-1115G4, RAM 8 Go, SSD 512 Go, Intel UHD Graphics, Windows 10',
-        price: 629.00,
-        prixAffiche: "Prix: 629.<sup>00</sup>€",
-        promo: "",
-        img: 'img/pc-portable-acer.jpg',
-        lien: '#'
-    },
-    {
-        id: 6,
-        denomination: "Asus Chromebook C523NA-BR000 Ordinateur Portable 15.6\" HD",
-        description: 'Celeron, RAM 4 Go, eMMC 64 Go, Chrome OS',
-        price: 299.00,
-        prixAffiche: "Prix: 299.<sup>00</sup>€",
-        promo: "",
-        img: 'img/pc-portable-asus.jpg',
-        lien: '#'
-    },
-    {
-        id: 7,
-        denomination: "HP 17-by2024nf PC Portable 17.3\" HD+ Noir",
-        description: 'Intel Core i3, RAM 4 Go, HDD 1 To, AZERTY, Windows 10',
-        price: 490.87,
-        prixAffiche: "Prix: 490.<sup>87</sup>€",
-        promo : "",
-        img: 'img/pc-portable-hp.jpg',
-        lien: '#'
-    },
-    {
-        id: 8,
-        denomination: "Apple MacBook Pro MD101LL/A Ordinateur portable 13,3in",
-        description: '2,5GHz, 4 Go de RAM, 500 Go de HD (Reconditionne)',
-        price: 549.00,
-        prixAffiche: "Prix: 549.<sup>00</sup>€",
-        promo: "",
-        img: 'img/pc-portable-apple.jpg',
-        lien: '#'
-    }
-]
+const pcPortable = []
+
+
 
 const displayArticle2 = () => {
-    const articlesNode2 = articles2.map((article) => {
-        return createArticle2(article)
-    });
+    const users2 = fetch('https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/pcPortable.json')
+        .then(async response => {
+            try {
+                const pcPortable = await response.json();
+                console.log(pcPortable);
+                const articlesNode2 = pcPortable.map((article) => {
+                return createArticle2(article)
+                });
     app2.append(...articlesNode2)
+    } catch(e) {
+    console.log(e);
     }
+        })
+}
     
     const app2 = document.querySelector('.rayon2');
 
@@ -204,6 +190,7 @@ const displayArticle2 = () => {
     const image = document.createElement('img');
     const h2 = document.createElement('h4');
     const paragraph = document.createElement('p');
+    const paragraph2 = document.createElement('p')
     const divAction = document.createElement('div');
     const price = document.createElement('p');
     const btnAjout = document.createElement('button');
@@ -218,6 +205,8 @@ const displayArticle2 = () => {
     
     h2.innerText = article.denomination;
     paragraph.innerText = article.description;
+    paragraph2.classList.add('stock')
+    paragraph2.innerHTML = "Dispo: " + article.dispo;
     price.innerHTML = article.prixAffiche;
     btnAjout.innerText = "Ajouter au panier";
 
@@ -242,7 +231,7 @@ const displayArticle2 = () => {
     });
 
     a.appendChild(image);
-    divArticle.append(a, h2, paragraph, divAction);
+    divArticle.append(a, h2, paragraph, paragraph2, divAction);
     divAction.append(price, btnAjout, btnSupp);
     
     return divArticle;
@@ -263,6 +252,9 @@ const displayArticle2 = () => {
         if (panier.length !==0) {
             span.classList.add('span')
         span.innerText =panier.length;
+        } else {
+            span.classList.remove('span');
+            span.innerText = "";
         }
     };
     
@@ -278,55 +270,23 @@ const displayArticle2 = () => {
     
     displayArticle2();
 
-const articles3 = [
-    {
-        id: 9,
-        denomination: "Acer Predator Orion 5000 (PO5-615s DG.E1YEF.007)",
-        description: 'Intel Core i7-10700K 16 Go SSD 1 To NVIDIA GeForce RTX 3080 11 Go Graveur DVD Wi-Fi AC Windows 10 Famille 64 bits',
-        price: 3299.90,
-        prixAffiche: "Prix: 3299.<sup>00</sup>€",
-        promo: "",
-        img: 'img/pc-gameur-acer.jpg',
-        lien: '#'
-    },
-    {
-        id: 10,
-        denomination: "LDLC PC10 Zen Perfect",
-        description: 'AMD Ryzen 5 5600X (3.7 GHz / 4.6 GHz) 16 Go SSD 240 Go + HDD 2 To NVIDIA GeForce RTX 3060 12 Go LAN 2.5 GbE Windows 10 Famille 64 bits',
-        price: 1759.94,
-        prixAffiche: "Prix: 1759.<sup>94</sup>€",
-        promo: "",
-        img: 'img/pc-gameur-ldlc.jpg',
-        lien: '#'
-    },
-    {
-        id: 11,
-        denomination: "ASUS ROG STRIX G15 G512LI-HN101T",
-        description: 'Intel Core i5-10300H 16 Go SSD 512 Go 15.6" LED Full HD 144 Hz NVIDIA GeForce GTX 1650 Ti 4 Go Wi-Fi AX/Bluetooth Windows 10 Famille 64 bits',
-        price: 999.95,
-        prixAffiche: "Prix: 999.<sup>95</sup>€",
-        promo: "",
-        img: 'img/pc-gameur-asus.jpg',
-        lien: '#'
-    },
-    {
-        id: 12,
-        denomination: "Gigabyte Aero 15 OLED XD-73FR644SP",
-        description: 'Intel Core i7-11800H 32 Go SSD 1 To 15.6" OLED Ultra HD NVIDIA GeForce RTX 3070 8 Go Wi-Fi AX/Bluetooth Webcam Windows 10 Professionnel 64 bits',
-        price: 2699.95,
-        prixAffiche: "Prix: 2699.<sup>95</sup>€",
-        promo: "",
-        img: 'img/pc-gameur-gigabyte.jpg',
-        lien: '#'
-    }
-]
+const pcGameur = []
 
 const displayArticle3 = () => {
-    const articlesNode3 = articles3.map((article) => {
-        return createArticle3(article)
-    });
+    const users3 = fetch('https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/pcGameur.json')
+        .then(async response => {
+            try {
+                const pcGameur = await response.json();
+                console.log(pcGameur);
+                const articlesNode3 = pcGameur.map((article) => {
+                return createArticle3(article)
+                });
     app3.append(...articlesNode3)
+    } catch(e) {
+    console.log(e);
     }
+        })
+}
     
 
     
@@ -341,6 +301,7 @@ const displayArticle3 = () => {
     const image = document.createElement('img');
     const h2 = document.createElement('h4');
     const paragraph = document.createElement('p');
+    const paragraph2 = document.createElement('p')
     const divAction = document.createElement('div');
     const price = document.createElement('p');
     const btnAjout = document.createElement('button');
@@ -358,6 +319,8 @@ const displayArticle3 = () => {
 
     h2.innerText = article.denomination;
     paragraph.innerText = article.description;
+    paragraph2.classList.add('stock')
+    paragraph2.innerHTML = "Dispo: " + article.dispo;
     price.innerHTML = article.prixAffiche;
     btnAjout.innerText = "Ajouter au panier";
     
@@ -381,7 +344,7 @@ const displayArticle3 = () => {
     });
 
     a.appendChild(image);
-    divArticle.append(a, h2, paragraph, divAction);
+    divArticle.append(a, h2, paragraph, paragraph2, divAction);
     divAction.append(price, btnAjout, btnSupp);
 
     return divArticle;
@@ -401,7 +364,10 @@ const displayArticle3 = () => {
         console.log(panier);
         if (panier.length !==0) {
             span.classList.add('span')
-        span.innerText =panier.length;
+            span.innerText =panier.length;
+        } else {
+            span.classList.remove('span');
+            span.innerText = "";
         }
     };
     
@@ -416,3 +382,25 @@ const displayArticle3 = () => {
     }
 
     displayArticle3();
+
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAM3I5CDdy3-xLrPd_dRBb1kqztc4RdVdA",
+    authDomain: "projet-ecommerce-grp2.firebaseapp.com",
+    projectId: "projet-ecommerce-grp2",
+    storageBucket: "projet-ecommerce-grp2.appspot.com",
+    messagingSenderId: "134275146361",
+    appId: "1:134275146361:web:7061a84c95240bb203eaa8"
+  };
+
+  // Initialize Firebase
+  const app4 = initializeApp(firebaseConfig);
+  import { getDatabase, get, ref, set, child, update, remove}
+    from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
+
+    const db = getDatabase();
