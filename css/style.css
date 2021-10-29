@@ -1,3 +1,6 @@
+
+/* """"""""""""""""""""""""""""""HEADER"""""""""""""""""""""""""""""""""""""""" */
+
 * {
   margin: 0;
   padding: 0;
@@ -48,10 +51,6 @@ button {
 
 .inscription {
   height: 80px;
-  /* margin-right: 20px; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .lien {
@@ -59,6 +58,10 @@ button {
 }
 
 .lien2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-indent: -10%;
   color: white;
 }
 
