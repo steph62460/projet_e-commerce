@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style admin.css" />
+    <title>BSPC-informatique-ADMIN</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+    <section class="form">
+    
+        <h2>PAGE ADMIN </h2>
+        <p><i>Les champs marqué par </i><em>*</em> sont <em>obligatoires</em></p>
+        <label for="">Categorie</label>
+        <select name="" id="menuB">
+          <option value="">PROMOTIONS</option>
+          <option value="">NOUVEAUTES</option>
+          <option value="">PC Fixe </option>
+          <option value="">PC Portable </option>
+          <option value="">PC gameur </option>
+          <option value="">TELEPHONIE</option>
+          <option value="">TABLETTE</option>
+          <option value="">IMAGES & SON</option>
+          <option value="">ACCESSOIRES</option>
+        </select>
+        <label for="IdB">Id<em>*</em></label>
+        <input type="text" id="IdB" /><br />
+
+        <label for="nameB">Nom<em>*</em></label>
+        <input type="text" placeholder="Apple" id="nameB"/><br/>
+
+        <label for="marqueB">Déscription<em>*</em></label>
+        <input type="text" placeholder="produit" id="marqueB"/><br/>
+
+        <label for="Dsp">Disponibilité<em>*</em></label>
+        <input type="text" placeholder="EN STOCK" id="Dsp"/><br/>
+
+        <label for="prixB">prix<em>*</em></label>
+        <input type="text" placeholder=" $ " id="prixB" /><br/>
+
+        <label for="Img">Image<em>*</em></label>
+        <input type="text" placeholder=".jpg /.png" id="Img"/><br/>
+
+        <br/>
+        <button id="insert">INSERT</button>
+        <button id="select">SELECT</button>
+        <button id="selectAll">SELECT ALL</button>
+        <!-- <button id="update">UPDATE</button>
+        <button id="delete">DELETE</button> -->
+    </section>
+
+    <div class="container">
+      <h1></h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Quantité</th>
+            <th>Catégorie</th>
+            <th>Description</th>
+            <th>Prix total</th>
+            <!-- <th></th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-zero">
+            <td>1</td>
+            <td>pc-gamer </td>
+            <td>Acer Predator Orion Intel I7-10700K</td>
+            <td>3299.95</td>
+            <td>
+              <button id="update">UPDATE</button>
+              <button id="delete">DELETE</button>
+            </td>
+          </tr>
+          <tr class="table-active">
+            <td>#</td>
+            <td>pc-portable </td>
+            <td>Acer Aspire Intel core I3-1115G4</td>
+            <td>629.00</td>
+            <td>
+              <button id="update">UPDATE</button>
+              <button id="delete">DELETE</button>
+            </td>
+          </tr>
+          <tr class="table-primary">
+            <td>#</td>
+            <td>pc-portable</td>
+            <td>apple 27" apple-27-imac-retina-5k-2020-intel-core-i5</td>
+            <td>1999.00</td>
+            <td>
+              <button id="update">UPDATE</button>
+              <button id="delete">DELETE</button>
+            </td>
+          </tr>
+          <tr class="table-secondary">
+            <td>#</td>
+            <td>pc-portable</td>
+            <td>ASUS Chromebook Intel HD Graphics 500</td>
+            <td>309.99</td>
+            <td>
+              <button id="update">UPDATE</button>
+              <button id="delete">DELETE</button>
+            </td>
+          </tr>
+          <tr class="table-success">
+            <td>#</td>
+            <td>pc-gamer</td>
+            <td>ASUS ROG Strix G15</td>
+            <td>999.95</td>
+            <td>
+              <button id="update">UPDATE</button>
+              <button id="delete">DELETE</button>
+            </td>
+          </tr>
+          <tr class="table-danger">
+            <td>#</td>
+            <td>pc-gamer</td>
+            <td>MSI intel-core-i5-10300H</td>
+            <td>899.00</td>
+            <td>
+              <button id="update">UPDATE</button>
+              <button id="delete">DELETE</button>
+            </td>
+          </tr>
+          <tr class="table-warning">
+            <td>#</td>
+            <td>pc-gamer</td>
+            <td>LDLC pc10 Zen AMD Ryzen 5 5600X</td>
+            <td>1759.94</td>
+            <td>
+              <button id="update">UPDATE</button>
+              <button id="delete">DELETE</button>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <td>#</td>
+            <td>pc-gamer</td>
+            <td>Gigabyte Aero Oled intel-core-i7-11800H</td>
+            <td>2699.95</td>
+            <td>
+              <button id="update">UPDATE</button>
+              <button id="delete">DELETE</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="table-primary"></td>
+            <td class="table-success">Chiffre d'affaire</td>
+            <td class="table-warning">Mois</td>
+            <td class="table-success">Année</td>
+          </tr>
+          <tr class="table-light">
+            <td></td>
+            <td>....</td>
+            <td>Janvier</td>
+            <td>2021</td>
+          </tr>
+          <tr class="table-dark">
+            <td></td>
+            <td>....</td>
+            <td>Février</td>
+            <td>2021</td>
+          </tr>
+        </tbody>
+      </table>
+
+    <script src="js/admin acceuil.js" type="module"></script>
+  </body>
+</html>

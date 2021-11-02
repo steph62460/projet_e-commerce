@@ -1,0 +1,86 @@
+.form {
+  color: white;
+  border: 3px solid #f1f1f1;
+  background: #fff;
+  padding-left: 5%;
+  padding-bottom: 5%;
+  width: 60%;
+  /* text-align: center; */
+  margin: 0 auto;
+  background-color: #144e83;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.24);
+}
+
+label {
+  display: flex;
+  color: white;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="Email"],
+input[type="tel"] {
+  width: 85%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  border-radius: 2%;
+}
+
+select {
+  display: inline-flex;
+  text-align: center;
+  width: 50%;
+  margin-bottom: 25px;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+.table {
+  background-color: rgb(238, 231, 231);
+  width: 100%;
+  border: 1px solid black;
+  box-shadow: 1px 0px 20px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+}
+
+.table-active {
+  border: 1px solid black;
+  background-color: cornflowerblue;
+}
+
+.table-secondary {
+  border: 1px solid black;
+  background-color: cornflowerblue;
+}
+
+.table-danger {
+  border: 1px solid black;
+  background-color: cornflowerblue;
+}
+
+.table-info {
+  border: 1px solid black;
+  background-color: cornflowerblue;
+}
+
+.table-zero button {
+  background-color: cornflowerblue;
+}
+
+.table-success button {
+  background-color: cornflowerblue;
+}
+
+.table-warning button {
+  background-color: cornflowerblue;
+}
+
+.table-primary button {
+  background-color: cornflowerblue;
+}
+
+.table-light {
+  background-color: cornflowerblue;
+}
