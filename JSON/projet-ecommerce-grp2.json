@@ -3,38 +3,42 @@
         "id" : 1,
         "denomination" : "Lenovo ThinkCentre V530s-07ICR SFF (11BM002QFR)",
         "description" : "Intel Pentium Gold G5400 4 Go 1 To Graveur DVD Windows 10 Professionnel 64 bits",
-        "price" : 439.96,
+        "price" : "439.96",
         "prixAffiche" : "Prix: 439.<sup>96</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-fixe-lenovo.jpg",
-        "lien": "Page_article1.html"
+        "lien": "Page_article1.html",
+        "visibility" : true
     }, {
         "id" : 2,
         "denomination" : "Dell OptiPlex 3010 SFF",
         "description" : "Intel Core i5 3.20 GHz 8 Go DDR3 240 Go SSD DVD Writer HDMI Windows 10 Pro 64 bit (reconditionné)",
-        "price" : 189.00,
+        "price" : "189.00",
         "prixAffiche" : "Prix: 189.<sup>00</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-fixe-dell.jpg",
-        "lien" : "#"
+        "lien" : "#",
+        "visibility" : true
     }, {
         "id" : 3,
         "denomination" : "HP Pavilion TP01-2014ng",
         "description" : "11e génération de processeurs Intel® Core™ i5 i5-11400 16 GB DDR4-SDRAM 512 GB SSD Mini Tower PC Windows 10 Home",
-        "price" : 695.65,
+        "price" : "695.65",
         "prixAffiche" : "Prix: 695.<sup>65</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-fixe-hp.jpg",
-        "lien" : "#"
+        "lien" : "#",
+        "visibility" : true
     }, {
         "id" : 4,
         "denomination" : "Acer PC Tour Veriton M4630G",
         "description" : "Intel i3-4130 RAM 8Go Disque Dur 1To Windows 10 WiFi (Reconditionné)",
-        "price" : 274.90,
+        "price" : "274.90",
         "prixAffiche" : "Prix: 274.<sup>90</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-fixe-acer.jpg",
-        "lien": "#"
+        "lien": "#",
+        "visibility" : true
     }
     ],
     
@@ -42,76 +46,84 @@
         "id" : 1,
         "denomination" : "Acer Aspire 3 A317-53-34A6 Ordinateur Portable 17.3'' HD+",
         "description" : "Intel Core i3-1115G4, RAM 8 Go, SSD 512 Go, Intel UHD Graphics, Windows 10",
-        "price" : 629.00,
+        "price" : "629.00",
         "prixAffiche" : "Prix: 629.<sup>00</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-portable-acer.jpg",
-        "lien": "#"
+        "lien": "#",
+        "visibility" : true
     }, {
         "id" : 2,
         "denomination" : "Asus Chromebook C523NA-BR000 Ordinateur Portable 15.6\" HD",
         "description" : "Celeron, RAM 4 Go, eMMC 64 Go, Chrome OS",
-        "price" : 299.00,
+        "price" : "299.00",
         "prixAffiche" : "Prix: 299.<sup>00</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-portable-asus.jpg",
-        "lien": "#"
+        "lien": "#",
+        "visibility" : true
     }, {
         "id" : 3,
         "denomination" : "HP 17-by2024nf PC Portable 17.3\" HD+ Noir",
         "description" : "Intel Core i3, RAM 4 Go, HDD 1 To, AZERTY, Windows 10",
-        "price" : 490.87,
+        "price" : "490.87",
         "prixAffiche" : "Prix: 490.<sup>87</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-portable-hp.jpg",
-        "lien" : "#"
+        "lien" : "#",
+        "visibility" : true
     }, {
         "id" : 4,
         "denomination" : "Apple MacBook Pro MD101LL/A Ordinateur portable 13,3in",
         "description" : "2,5GHz, 4 Go de RAM, 500 Go de HD (Reconditionne)",
-        "price" : 549.00,
+        "price" : "549.00",
         "prixAffiche" : "Prix: 549.<sup>00</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-portable-apple.jpg",
-        "lien": "#"
+        "lien": "#",
+        "visibility" : true
     }
     ],
     "pcGameur" : [{
         "id" : 1,
         "denomination" : "Acer Predator Orion 5000 (PO5-615s DG.E1YEF.007)",
         "description" : "Intel Core i7-10700K 16 Go SSD 1 To NVIDIA GeForce RTX 3080 11 Go Graveur DVD Wi-Fi AC Windows 10 Famille 64 bits",
-        "price" : 3299.90,
-        "prixAffiche" : "Prix: 3299.<sup>00</sup>€",
+        "price" : "3299.90",
+        "prixAffiche" : "Prix: 3299.00<",
         "dispo" : "En Stock",
         "img": "img/pc-gameur-acer.jpg",
-        "lien": "#"
+        "lien": "#",
+        "visibility" : true
     }, {
         "id" : 2,
         "denomination" : "LDLC PC10 Zen Perfect",
         "description" : "AMD Ryzen 5 5600X (3.7 GHz / 4.6 GHz) 16 Go SSD 240 Go + HDD 2 To NVIDIA GeForce RTX 3060 12 Go LAN 2.5 GbE Windows 10 Famille 64 bits",
-        "price" : 1759.94,
+        "price" : "1759.94",
         "prixAffiche" : "Prix: 1759.<sup>94</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-gameur-ldlc.jpg",
-        "lien": "#"
+        "lien": "#",
+        "visibility" : true
     }, {
         "id" : 3,
         "denomination" : "ASUS ROG STRIX G15 G512LI-HN101T",
         "description" : "Intel Core i5-10300H 16 Go SSD 512 Go 15.6\" LED Full HD 144 Hz NVIDIA GeForce GTX 1650 Ti 4 Go Wi-Fi AX/Bluetooth Windows 10 Famille 64 bits",
-        "price" : 999.95,
+        "price" : "999.95",
         "prixAffiche" : "Prix: 999.<sup>95</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-gameur-asus.jpg",
-        "lien": "#"
+        "lien": "#",
+        "visibility" : true
     }, {
         "id" : 4,
         "denomination" : "Gigabyte Aero 15 OLED XD-73FR644SP",
         "description" : "Intel Core i7-11800H 32 Go SSD 1 To 15.6\" OLED Ultra HD NVIDIA GeForce RTX 3070 8 Go Wi-Fi AX/Bluetooth Webcam Windows 10 Professionnel 64 bits",
-        "price" : 2699.95,
+        "price" : "2699.95",
         "prixAffiche" : "Prix: 2699.<sup>95</sup>€",
         "dispo" : "En Stock",
         "img" : "img/pc-gameur-gigabyte.jpg",
-        "lien": "#"
+        "lien": "#",
+        "visibility" : true
     }
 ],
 "promotion" : [{
@@ -119,33 +131,37 @@
     "denomination" : "PC portable Acer Aspire 3 A317-53-34A6",
     "marque" : "Acer Aspire",
     "description": "Intel core I3-1115G4 et Intel UHD graphics RAM 8 Go SSD 512 Go",
-    "price": 629.0,
+    "price": "629.00",
     "prixAffiche" : "PRIX: 629.<sup>00</sup>€",
-    "img" : "img/pc-portable-acer.jpg"
+    "img" : "img/pc-portable-acer.jpg",
+    "visibility" : true
 }, {
     "id": 2,
     "denomination" : "Asus Chromebook C223NA-GJ0010 Ordinateur Portable 15.6\" HD",
     "marque" : "Asus",
     "description" : "Intel HD Graphics 500 11.6\" Celeron RAM 4 Go, EMMC 32 Go",
-    "price" : 309.99,
+    "price" : "309.99",
     "prixAffiche" : "PRIX: 309.<sup>99</sup>€",
-    "img" : "img/ordinateur-portable-chromebook-asus-c223na-gj0010.jpg"
+    "img" : "img/ordinateur-portable-chromebook-asus-c223na-gj0010.jpg",
+    "visibility" : true
 }, {
     "id" : 3,
     "denomination" : "apple 27¨ apple-27-imac-retina-5k-2020",
     "marque" : "Apple",
     "description" : "Intel core I5 16 Go\" RAM 8Go,stockage 256Go 2020",
-    "price" : 1999.0,
+    "price" : "1999.00",
     "prixAffiche" : "PRIX: 1999.<sup>00</sup>€",
-    "img" : "img/apple-27-imac-retina-5k-2020-intel-core-i5.jpg"
+    "img" : "img/apple-27-imac-retina-5k-2020-intel-core-i5.jpg",
+    "visibility" : true
 }, {
     "id" : 4,
     "denomination" : "pc portable gamer MSI",
     "marque" : "MSI",
     "description" :"RAM 8Go- stockage 512Go15.6\" FHD 144Hz-core I5-10300H SSD-GTX 1650 Max Q",
-    "price" : 899.0,
+    "price" : "899.00",
     "prixAffiche" : "PRIX:899.<sup>00</sup>€",
-    "img" : "img/pc-portable-gamer-msi-gf63-thin-10sc-079xfr-15.jpg"
+    "img" : "img/pc-portable-gamer-msi-gf63-thin-10sc-079xfr-15.jpg",
+    "visibility" : true
 }
 ],
 "nouveautes" : [{
@@ -153,33 +169,37 @@
     "denomination" : "Acer Predator Orion 5000 (PO5-615s DG.E1YEF.007)",
     "marque" : "pc gameur acer",
     "description" :"Intel Core i7-10700K 16 Go SSD 1 To NVIDIA GeForce RTX 3080 11 Go Graveur DVD Wi-Fi AC Windows 10 Famille 64 bits",
-    "price" : 3299.95,
+    "price" : "3299.95",
     "prixAffiche" : "PRIX: 3299.<sup>95</sup>€",
-    "img" : "img/pc-gameur-acer.jpg"
+    "img" : "img/pc-gameur-acer.jpg",
+    "visibility" : true
 }, {
     "id" : 2,
     "denomination" : "LDLC PC10 Zen Perfect",
    "marque" : "pc gameur ldlc",
     "description" :"AMD Ryzen 5 5600X (3.7 GHz / 4.6 GHz) 16 Go SSD 240 Go + HDD 2 To NVIDIA GeForce RTX 3060 12 Go LAN 2.5 GbE Windows 10 Famille 64 bits",
-    "price" : 1759.94,
+    "price" : "1759.94",
     "prixAffiche" : "PRIX: 1759.<sup>94</sup>€",
-    "img" : "img/pc-gameur-ldlc.jpg"
+    "img" : "img/pc-gameur-ldlc.jpg",
+    "visibility" : true
 }, {
     "id" : 3,
     "denomination" : "pc gameur asus",
     "marque" : "ASUS ROG STRIX G15 G512LI-HN101T",
     "description" :"Intel Core i5-10300H 16 Go SSD 512 Go 15.6\" LED Full HD 144 Hz NVIDIA GeForce GTX 1650 Ti 4 Go Wi-Fi AX/Bluetooth Windows 10 Famille 64 bits",
-    "price" : 999.95,
+    "price" : "999.95",
     "prixAffiche" : "PRIX: 999.<sup>95</sup>€",
-    "img" : "img/pc-gameur-asus.jpg"
+    "img" : "img/pc-gameur-asus.jpg",
+    "visibility" : true
 }, {
     "id" : 4,
     "denomination" : "Gigabyte Aero 15 OLED XD-73FR644SP",
     "marque" : "pc gameur gigabyte",
     "description" :"Intel Core i7-11800H 32 Go SSD 1 To 15.6\" OLED Ultra HD NVIDIA GeForce RTX 3070 8 Go Wi-Fi AX/Bluetooth Webcam Windows 10 Professionnel 64 bits",
-    "price" : 2699.95,
+    "price" : "2699.95",
     "prixAffiche" : "PRIX: 2699.<sup>95</sup>€",
-    "img" : "img/pc-gameur-gigabyte.jpg"
+    "img" : "img/pc-gameur-gigabyte.jpg",
+    "visibility" : true
 }
 ],
 "ecrans" : [{
@@ -190,7 +210,8 @@
     "taille": 55,
     "dispo": "EN STOCK",
     "price": 1299.95,
-    "img": "img/IMG TV/lg 55 oled.jpg"
+    "img": "img/IMG TV/lg 55 oled.jpg",
+    "visibility" : true
 }, {
     "id": 2,
     "denomination": "HISENSE 32 - TV LED HD - 80cm",
@@ -199,7 +220,8 @@
     "taille": 32,
     "dispo": "EN STOCK",
     "price": 199.96,
-    "img": "img/IMG TV/hisense 32 hd.jpg"
+    "img": "img/IMG TV/hisense 32 hd.jpg",
+    "visibility" : true
 }, {
     "id": 3,
         "denomination": "PANASONIC 55 - TV OLED 4K - 139cm",
@@ -208,7 +230,8 @@
         "taille": 55,
         "dispo": "EN STOCK",
         "price": 1189.00,
-        "img": "img/IMG TV/panasonic 55 oled.jpg"
+        "img": "img/IMG TV/panasonic 55 oled.jpg",
+        "visibility" : true
 }, {
     "id": 4,
     "denomination": "HISENSE 43 -TV  4K - 108cm",
@@ -217,7 +240,8 @@
     "taille": 43,
     "dispo": "EN STOCK",
     "price": 349.96,
-    "img": "img/IMG TV/hisense 43 4k.jpg"
+    "img": "img/IMG TV/hisense 43 4k.jpg",
+    "visibility" : true
 }
 ],
 "casque" : [{
@@ -228,7 +252,8 @@
         "connexion":"sans fils",
         "dispo": "EN STOCK",
         "price": 92.99,
-        "img": "img/img_casques/Casque gamer Roccat ELO 7.1 AIR.png"
+        "img": "img/img_casques/Casque gamer Roccat ELO 7.1 AIR.png",
+        "visibility" : true
 }, {
     "id": 2,
         "denomination": "Casque gamer Razer Barracuda X",
@@ -237,7 +262,8 @@
         "connexion":"sans fils",
         "dispo": "EN STOCK",
         "price": 99.99,
-        "img": "img/img_casques/Casque gamer Razer Barracuda X.png"
+        "img": "img/img_casques/Casque gamer Razer Barracuda X.png",
+        "visibility" : true
 }, {
             "id": 3,
         "denomination": "Casque gamer Hyperx Cloud Stinger S 7.1 PC",
@@ -246,7 +272,8 @@
         "connexion":"Filaire Jack",
         "dispo": "EN STOCK",
         "price": 69.99,
-        "img": "img/img_casques/Casque gamer Hyperx Cloud Stinger S 7.1 PC.png"
+        "img": "img/img_casques/Casque gamer Hyperx Cloud Stinger S 7.1 PC.png",
+        "visibility" : true
 }, {
             "id": 4,
         "denomination": "Casque gamer JBL Quantum 200 Noir",
@@ -255,7 +282,8 @@
         "connexion":"Filaire Jack",
         "dispo": "EN STOCK",
         "price": 59.99,
-        "img": "img/img_casques/Casque gamer JBL Quantum 200 Noir.png"
+        "img": "img/img_casques/Casque gamer JBL Quantum 200 Noir.png",
+        "visibility" : true
 }
 ]
 }

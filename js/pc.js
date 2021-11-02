@@ -1,44 +1,6 @@
-let pcFixe = [
-    // {
-    //     id: 1,
-    //     denomination: "Lenovo ThinkCentre V530s-07ICR SFF (11BM002QFR)",
-    //     description : "Intel Pentium Gold G5400 4 Go 1 To Graveur DVD Windows 10 Professionnel 64 bits",
-    //     price: 439.96,
-    //     prixAffiche: "Prix: 439.<sup>96</sup>€",
-    //     img: 'img/pc-fixe-lenovo.jpg',
-    //     lien: 'Page_article1.html'
-    // },
-    // {
-    //     id: 2,
-    //     denomination: "Dell OptiPlex 3010 SFF",
-    //     description: "Intel Core i5 3.20 GHz 8 Go DDR3 240 Go SSD DVD Writer HDMI Windows 10 Pro 64 bit (reconditionné)",
-    //     price: 189.00,
-    //     prixAffiche: "Prix: 189.<sup>00</sup>€",
-    //     img: 'img/pc-fixe-dell.jpg',
-    //     lien: '#'
-    // },
-    // {
-    //     id: 3,
-    //     denomination: "HP Pavilion TP01-2014ng",
-    //     description: '11e génération de processeurs Intel® Core™ i5 i5-11400 16 GB DDR4-SDRAM 512 GB SSD Mini Tower PC Windows 10 Home',
-    //     price: 695.65,
-    //     prixAffiche: "Prix: 695.<sup>65</sup>€",
-    //     img: 'img/pc-fixe-hp.jpg',
-    //     lien: '#'
-    // },
-    // {
-    //     id: 4,
-    //     denomination: "Acer PC Tour Veriton M4630G",
-    //     description: 'Intel i3-4130 RAM 8Go Disque Dur 1To Windows 10 WiFi (Reconditionné)',
-    //     price: 274.90,
-    //     prixAffiche: "Prix: 274.<sup>90</sup>€",
-    //     img: 'img/pc-fixe-acer.jpg',
-    //     lien: '#'
-    // }
-]
+let pcFixe = []
 
 let panier =[];
-
 
 const displayArticle = () => {
     const users = fetch('https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/pcFixe.json')
@@ -54,8 +16,8 @@ const displayArticle = () => {
     console.log(e);
     }
         })
-
 }
+
     
     const app = document.querySelector('.rayon');
 
@@ -83,7 +45,15 @@ const displayArticle = () => {
     paragraph.innerText = article.description;
     paragraph2.classList.add('stock')
     paragraph2.innerHTML = "Dispo: " + article.dispo;
-    price.innerHTML = article.prixAffiche;
+    let decimal = article.price;
+    let decimalAsInt = Math.round((decimal - parseInt(decimal)) * 100);
+    const sup = document.createElement('sup');
+    sup.innerText = decimalAsInt
+    let intNumber = parseInt(decimal);
+    const spanPrice = document.createElement('span');
+    const euro = document.createElement('span');
+    euro.innerText = "€"
+    spanPrice.innerText = intNumber + '.';
     btnAjout.innerText = "Ajouter au panier";
     
     // modif bouton
@@ -112,6 +82,7 @@ const displayArticle = () => {
     a.appendChild(image);
     divArticle.append(a, h2, paragraph,paragraph2, divAction);
     divAction.append(price, btnAjout,btnSupp);
+    price.append("Prix: " , spanPrice, sup, euro)
     
     return divArticle;
     }
@@ -207,7 +178,15 @@ const displayArticle2 = () => {
     paragraph.innerText = article.description;
     paragraph2.classList.add('stock')
     paragraph2.innerHTML = "Dispo: " + article.dispo;
-    price.innerHTML = article.prixAffiche;
+    let decimal = article.price;
+    let decimalAsInt = Math.round((decimal - parseInt(decimal)) * 100);
+    const sup = document.createElement('sup');
+    sup.innerText = decimalAsInt
+    let intNumber = parseInt(decimal);
+    const spanPrice = document.createElement('span');
+    const euro = document.createElement('span');
+    euro.innerText = "€"
+    spanPrice.innerText = intNumber + '.';
     btnAjout.innerText = "Ajouter au panier";
 
     btnSupp.style.backgroundColor = 'red';
@@ -233,6 +212,7 @@ const displayArticle2 = () => {
     a.appendChild(image);
     divArticle.append(a, h2, paragraph, paragraph2, divAction);
     divAction.append(price, btnAjout, btnSupp);
+    price.append("Prix: " , spanPrice, sup, euro)
     
     return divArticle;
     }
@@ -321,7 +301,15 @@ const displayArticle3 = () => {
     paragraph.innerText = article.description;
     paragraph2.classList.add('stock')
     paragraph2.innerHTML = "Dispo: " + article.dispo;
-    price.innerHTML = article.prixAffiche;
+    let decimal = article.price;
+    let decimalAsInt = Math.round((decimal - parseInt(decimal)) * 100);
+    const sup = document.createElement('sup');
+    sup.innerText = decimalAsInt
+    let intNumber = parseInt(decimal);
+    const spanPrice = document.createElement('span');
+    const euro = document.createElement('span');
+    euro.innerText = "€"
+    spanPrice.innerText = intNumber + '.';
     btnAjout.innerText = "Ajouter au panier";
     
     btnSupp.style.backgroundColor = 'red';
@@ -346,6 +334,7 @@ const displayArticle3 = () => {
     a.appendChild(image);
     divArticle.append(a, h2, paragraph, paragraph2, divAction);
     divAction.append(price, btnAjout, btnSupp);
+    price.append("Prix: " , spanPrice, sup, euro)
 
     return divArticle;
     };
