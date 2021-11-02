@@ -37,22 +37,19 @@ let selectAllBtn = document.querySelector("#selectAll");
 let updateBtn = document.querySelector("#update");
 let deleteBtn = document.querySelector("#delete");
 
+let articles= [];
 
-// const app2 = document.querySelector(".table")
-const app2 = document.querySelector("tbody")
+const displayTable = () => {
+    const tableauNode = articles.map((article) => {
+        return createTable(article)
+    });
+    app2.append(...tableauNode)
+}
+
+const app2 = document.querySelector('tbody');
 
 const createTable = (article) => {
 
-  const thead = document.createElement('thead');
-const tr = document.createElement('tr');
-const th = document.createElement('th');
-const th2 = document.createElement('th');
-const th3 = document.createElement('th');
-const th4 = document.createElement('th');
-const th5 = document.createElement('th');
-const th6 = document.createElement('th');
-const th7 = document.createElement('th');
-const tbody = document.createElement('tbody');
 const tr2 = document.createElement('tr');
 const td = document.createElement('td');
 const td2 = document.createElement('td');
@@ -64,34 +61,23 @@ const td7 = document.createElement('td');
 const btnEdit = document.createElement('button');
 const btnSupp = document.createElement('button');
 
-// thead.classList.add('thead-dark');
-// th.innerText = "Id";
-// th2.innerText = "Nom";
-// th3.innerText = "Denomination";
-// th4.innerText = "Dispo";
-// th5.innerText = "Prix";
-// th6.innerText = "Editer";
-// th7.innerText = "Supprimer";
-
-// td.push = idb;
-td2.push = nameb;
-td3.push = denob;
-td4.push = dispob;
-td5.push = priceb;
+td = article.id;
+td2 = article.name;
+td3 = article.denomnation;
+td4 = article.dispo;
+td5 = article.price;
 btnEdit.classList.add('edit');
 btnEdit.innerText = "Edit"
 btnSupp.classList.add('delete');
 btnSupp.innerText = "Delete";
 
-app2.append(thead, tbody)
-// thead.appendChild(tr)
-tbody.appendChild(tr2)
-tr.append(th, th2, th3, th4, th5, th6, th7)
+
 tr2.append(td, td2, td3, td4, td5, td6, td7)
 td6.appendChild(btnEdit);
 td7.appendChild(btnSupp);
   
-return tr;
+return tr2;
+
 }  
 
 // FUNCTION INSERT
@@ -115,7 +101,7 @@ insertBtn.addEventListener('click', insertData)
 
 // FUNCTION SELECT
 
-function selectDAta() {
+function selectData() {
     const dbref = ref(db);
 
     get(child(dbref, (menuB.value + "/") + idb.value))
@@ -135,7 +121,7 @@ function selectDAta() {
         })
 }
 
-selectBtn.addEventListener('click', selectDAta)
+selectBtn.addEventListener('click', selectData)
 
 // FUNCTION UPDATE
 
@@ -190,5 +176,5 @@ function selectAllData() {
 
 selectAllBtn.addEventListener('click', selectAllData)
 
-
+displayTable();
     
