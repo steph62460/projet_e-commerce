@@ -1,0 +1,31 @@
+{
+"articles" : [ {
+	"id": 1,
+        "denomination" : "LG 55 - TV OLED 4K - 139cm",
+        "marque" : "LG",
+        "resolution" : "OLED",
+        "taille" : 55,
+        "dispo" : "EN STOCK",
+        "price" : 1299.95,
+        "img" : "lg 55 oled.jpg"
+}, {
+	"id" : 2,
+        "denomination" : "HISENSE 32 - TV LED HD - 80cm",
+        "marque" : "HISENSE",
+        "resolution" : "HD",
+        "taille" : 32,
+        "dispo" : "STOCK EPUISE",
+        "price" : 199.96,
+        "img" : "hisense 32 hd.jpg"
+}, {
+	"id" : 3,
+        "denomination" : "PANASONIC 55 - TV OLED 4K - 139cm",
+        "marque" : "PANASONIC",
+        "resolution" : "OLED",
+        "taille" : 55,
+        "dispo" : "EN STOCK",
+        "price" : 1189.00,
+        "img" : "panasonic 55 oled.jpg"
+}
+]
+}
