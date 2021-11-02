@@ -38,55 +38,61 @@ let updateBtn = document.querySelector("#update");
 let deleteBtn = document.querySelector("#delete");
 
 
-const app2 = document.querySelector(".table")
+// const app2 = document.querySelector(".table")
+const app2 = document.querySelector("tbody")
+
+const createTable = (article) => {
+
+  const thead = document.createElement('thead');
+const tr = document.createElement('tr');
+const th = document.createElement('th');
+const th2 = document.createElement('th');
+const th3 = document.createElement('th');
+const th4 = document.createElement('th');
+const th5 = document.createElement('th');
+const th6 = document.createElement('th');
+const th7 = document.createElement('th');
+const tbody = document.createElement('tbody');
+const tr2 = document.createElement('tr');
+const td = document.createElement('td');
+const td2 = document.createElement('td');
+const td3 = document.createElement('td');
+const td4 = document.createElement('td');
+const td5 = document.createElement('td');
+const td6 = document.createElement('td');
+const td7 = document.createElement('td');
+const btnEdit = document.createElement('button');
+const btnSupp = document.createElement('button');
+
+// thead.classList.add('thead-dark');
+// th.innerText = "Id";
+// th2.innerText = "Nom";
+// th3.innerText = "Denomination";
+// th4.innerText = "Dispo";
+// th5.innerText = "Prix";
+// th6.innerText = "Editer";
+// th7.innerText = "Supprimer";
+
+// td.push = idb;
+td2.push = nameb;
+td3.push = denob;
+td4.push = dispob;
+td5.push = priceb;
+btnEdit.classList.add('edit');
+btnEdit.innerText = "Edit"
+btnSupp.classList.add('delete');
+btnSupp.innerText = "Delete";
+
+app2.append(thead, tbody)
+// thead.appendChild(tr)
+tbody.appendChild(tr2)
+tr.append(th, th2, th3, th4, th5, th6, th7)
+tr2.append(td, td2, td3, td4, td5, td6, td7)
+td6.appendChild(btnEdit);
+td7.appendChild(btnSupp);
   
-    const thead = document.createElement('thead');
-    const tr = document.createElement('tr');
-    const th = document.createElement('th');
-    const th2 = document.createElement('th');
-    const th3 = document.createElement('th');
-    const th4 = document.createElement('th');
-    const th5 = document.createElement('th');
-    const th6 = document.createElement('th');
-    const th7 = document.createElement('th');
-    const tbody = document.createElement('tbody');
-    const tr2 = document.createElement('tr');
-    const td = document.createElement('td');
-    const td2 = document.createElement('td');
-    const td3 = document.createElement('td');
-    const td4 = document.createElement('td');
-    const td5 = document.createElement('td');
-    const td6 = document.createElement('td');
-    const td7 = document.createElement('td');
-    const btnEdit = document.createElement('button');
-    const btnSupp = document.createElement('button');
-
-    thead.classList.add('thead-dark');
-    th.innerText = "Id";
-    th2.innerText = "Nom";
-    th3.innerText = "Denomination";
-    th4.innerText = "Dispo";
-    th5.innerText = "Prix";
-    th6.innerText = "Editer";
-    th7.innerText = "Supprimer";
-
-    // td.push = idb;
-    td2.push = nameb;
-    td3.push = denob;
-    td4.push = dispob;
-    td5.push = priceb;
-    btnEdit.classList.add('edit');
-    btnEdit.innerText = "Edit"
-    btnSupp.classList.add('delete');
-    btnSupp.innerText = "Delete";
-
-    app2.append(thead, tbody)
-    thead.appendChild(tr)
-    tbody.appendChild(tr2)
-    tr.append(th, th2, th3, th4, th5, th6, th7)
-    tr2.append(td, td2, td3, td4, td5, td6, td7)
-    td6.appendChild(btnEdit);
-    td7.appendChild(btnSupp);
+return tr;
+}  
 
 // FUNCTION INSERT
 
@@ -169,7 +175,9 @@ deleteBtn.addEventListener('click', deleteData)
 // FUNCTION SELECTALL
 
 function selectAllData() {
-    const users = fetch('https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/' + menuB.value +'.json')
+    const value = menub.value;
+    console.log(value);
+    const users = fetch('https://projet-ecommerce-grp2-default-rtdb.firebaseio.com/' + value +'.json')
         .then(async response => {
             try {
                 const allMyUser = await response.json();
