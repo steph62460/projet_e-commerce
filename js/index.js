@@ -23,7 +23,7 @@ let promotion = [
   //   denomination: "apple 27¨ apple-27-imac-retina-5k-2020",
   //   marque: "Apple",
   //   description: 'Intel core I5 16 Go" RAM 8Go,stockage 256Go 2020',
-  //   price: 1999.0,
+  //   price: 1999.00,
   //   prixAffiche: "PRIX: 1999.<sup>00</sup>€",
   //   img: "img/apple-27-imac-retina-5k-2020-intel-core-i5.jpg",
   // },
